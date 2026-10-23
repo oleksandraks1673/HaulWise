@@ -307,7 +307,7 @@ async function authenticate(){
  $('submitAuth').disabled=true;
  $('authMsg').textContent=signup?'Creating your account…':'Signing in…';
  try{
-   const {data,error}=signup?await api.auth.signUp({email,password}):await api.auth.signInWithPassword({email,password});
+   const {data,error}=signup?await api.auth.signUp({email,password,options:{emailRedirectTo:'https://haulwise-murex.vercel.app/'}}):await api.auth.signInWithPassword({email,password});
    if(error){$('authMsg').textContent=error.message;return}
    if(signup&&!data.session){$('authMsg').textContent='Check your email to confirm your account, then sign in.';return}
    $('authMsg').textContent='Signed in successfully.';
