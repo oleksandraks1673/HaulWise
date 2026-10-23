@@ -25,7 +25,7 @@ function respond(origin: string, value: unknown, status = 200) {
       'Access-Control-Allow-Methods': 'POST,OPTIONS'
     } : {})
   };
-  return new Response(JSON.stringify(value), { status, headers });
+  return new Response(status === 204 ? null : JSON.stringify(value), { status, headers });
 }
 
 function inputText(value: unknown): string {
