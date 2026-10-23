@@ -21,5 +21,25 @@ const beforeBillingTab=tab;tab=function(name){beforeBillingTab(name);if(user&&na
 const beforeBillingReset=resetWork;resetWork=function(){++billingEpoch;billingOwner=null;billingAccount=null;billingBusy=false;const c=$('billingControls');if(c)c.remove();const m=$('billingMessage');if(m)m.remove();beforeBillingReset();renderBillingPlans();};
 const beforeBillingTripEditor=showTripEditor;showTripEditor=function(...args){if(billingAvailability&&!billingAllowed()){tab('plans');billingMessage('Upgrade to Pro to add or update saved loads. Your existing records remain available.');return;}beforeBillingTripEditor(...args);};
 const beforeBillingExpenseEditor=showExpenseEditor;showExpenseEditor=function(...args){if(billingAvailability&&!billingAllowed()){tab('plans');billingMessage('Upgrade to Pro to add or update expense records.');return;}beforeBillingExpenseEditor(...args);};
+// Refresh verified entitlements after every sign-in and session restoration.
+// This wraps the auth flow already enhanced by workflow-enhancements.js.
+const beforeBillingRefreshAuth=refreshAuth;
+refreshAuth=async function(...args){
+ await beforeBillingRefreshAuth(...args);
+ await loadBillingState();
+};
+// Stripe's signed webhook can arrive moments after Checkout redirects.
+// Retry verification briefly; returning to the success URL never grants Pro by itself.
+const billingReturn=new URLSearchParams(location.search).get('billing');
+if(billingReturn==='success'){
+ let tries=0;
+ const verifyReturn=async()=>{
+  if(!user||tries>=6)return;
+  await loadBillingState();
+  if(!billingAccount?.pro&&++tries<6)setTimeout(verifyReturn,2500);
+ };
+ const beforeBillingReturnRefresh=refreshAuth;
+ refreshAuth=async function(...args){await beforeBillingReturnRefresh(...args);verifyReturn();};
+}
 loadBillingState();
 if(new URLSearchParams(location.search).has('billing')){if(user)tab('plans');else queuedSection='plans';}
