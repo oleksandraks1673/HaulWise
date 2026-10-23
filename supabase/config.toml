@@ -1,0 +1,5 @@
+[functions.haulwise-billing]
+verify_jwt = true
+
+[functions.haulwise-stripe-webhook]
+verify_jwt = false
