@@ -90,7 +90,7 @@ body.guest #appWorkspace{display:none!important}
 .guest-portal{max-width:604px;margin:0 auto}
 .guest-portal.hidden{display:none!important}
 .entry-brand{text-align:center;margin:0 auto 24px}
-.entry-brand-mark{display:block;height:112px;width:112px;object-fit:contain;margin:0 auto 9px;border-radius:24px;filter:drop-shadow(0 0 22px rgba(1,216,234,.23))}
+.entry-brand-mark{display:block;width:min(72vw,260px);height:auto;aspect-ratio:1;object-fit:contain;margin:0 auto 13px;border-radius:25px;filter:drop-shadow(0 0 25px rgba(1,216,234,.28))}
 .entry-brand-word{font-size:clamp(35px,6vw,49px);font-weight:900;line-height:1;letter-spacing:-1.8px;font-style:italic;color:#eff9fd;text-shadow:0 5px 23px #0005}
 .entry-brand-word span{color:#3ce2e9}
 .entry-brand-sub{font-weight:750;font-size:11px;letter-spacing:3px;color:#b9d7dc;margin-top:12px}
@@ -122,8 +122,8 @@ body.guest #appWorkspace{display:none!important}
 .market-actions .market-outline{background:#102e42!important;color:#d8fbfe!important;border:1px solid #348195}
 .market-teaser .teaser-caveat{margin:12px 0 0;color:#85a9b7;font-size:11px}
 .entry-trust{text-align:center;color:#94b4bd;font-size:12px;padding:20px 0}
-@media(min-width:790px){body.guest main{padding-top:44px}.entry-brand-mark{width:132px;height:132px}.entry-brand{margin-bottom:30px}}
-@media(max-width:540px){body.guest main{padding:26px 15px 55px}.entry-brand-mark{width:104px;height:104px}.entry-brand p{font-size:14px}.auth-panel{padding:23px 21px;border-radius:24px}.auth-switch{margin-bottom:27px}.auth-switch button{font-size:15px;min-height:48px}.auth-panel input{min-height:55px}.market-teaser{padding:22px 18px;border-radius:20px}.market-tags span{font-size:10px;padding:7px 8px}.market-actions{grid-template-columns:1fr 1fr}.market-actions button{padding:11px 7px}.entry-trust{font-size:11px}}
+@media(min-width:790px){body.guest main{padding-top:44px}.entry-brand-mark{width:275px}.entry-brand{margin-bottom:30px}}
+@media(max-width:540px){body.guest main{padding:26px 15px 55px}.entry-brand-mark{width:min(64vw,238px)}.entry-brand p{font-size:14px}.auth-panel{padding:23px 21px;border-radius:24px}.auth-switch{margin-bottom:27px}.auth-switch button{font-size:15px;min-height:48px}.auth-panel input{min-height:55px}.market-teaser{padding:22px 18px;border-radius:20px}.market-tags span{font-size:10px;padding:7px 8px}.market-actions{grid-template-columns:1fr 1fr}.market-actions button{padding:11px 7px}.entry-trust{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.auth-switch button,.market-actions button{transition:none}}
 
 </style></head><body class="guest">
@@ -132,9 +132,7 @@ body.guest #appWorkspace{display:none!important}
 
 <div id="guestPortal" class="guest-portal">
   <div class="entry-brand" aria-label="HaulWise — Every Mile Matters">
-    <img class="entry-brand-mark" alt="Official HaulWise truck logo" src="/icon.svg">
-    <div class="entry-brand-word">HAUL<span>WISE</span></div>
-    <div class="entry-brand-sub">EVERY MILE MATTERS.</div>
+    <img class="entry-brand-mark" alt="Official HaulWise logo — Every Mile Matters" src="/icon.svg?v=signup-20261023" width="512" height="512" decoding="async">
     <p>Find loads. Post hauls. Earn more.</p>
   </div>
   <section id="auth" class="auth-panel" aria-labelledby="authTitle">
