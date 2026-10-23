@@ -4,3 +4,36 @@
 /* Daily workflow */
 .daily-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:18px 0}.daily-card{background:linear-gradient(145deg,#0b3043,#071c2d);border:1px solid #25556d;border-radius:16px;padding:18px}.daily-card strong{display:block;font-size:27px;margin:9px 0;color:#e7ffff}.daily-card small{display:block;line-height:1.5}.daily-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}.daily-heading h2{margin:0}.daily-heading button{font-size:12px}.daily-route{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #204657}.daily-route:last-child{border:0}.daily-route p{margin:5px 0;font-size:13px}.daily-route button{font-size:12px;white-space:nowrap}.inquiry-panel{border-color:#0ab9ca;scroll-margin-top:100px}.inquiry-panel[hidden]{display:none}.market-filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.market-result-note{font-size:12px;color:#9cc4d2;margin:14px 0}.market-load-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}.activity-contact{border-top:1px solid #28576c;margin-top:12px;padding-top:12px}.activity-contact a{color:#72eaf2;overflow-wrap:anywhere}.activity-contact p{margin:7px 0}.load-tags{display:flex;gap:8px;flex-wrap:wrap}.work-toast{color:#b8f8eb;margin:12px 0;min-height:1px}.work-toast:empty{margin:0}.daily-empty{background:#092738;border:1px dashed #2e5b6e;border-radius:16px;padding:23px;margin:17px 0}.daily-empty h3{margin:0 0 9px}.daily-empty p{margin:0 0 15px}.daily-period{font-size:12px;color:#a4cbd7}.inquiry-panel textarea{min-height:100px}.market-filter-grid label{margin-top:6px}.load .money{font-size:17px}.load footer{margin-top:10px}
 @media(max-width:580px){.daily-grid{grid-template-columns:1fr 1fr}.daily-card:last-child{grid-column:1/-1}.daily-card strong{font-size:24px}.market-filter-grid{grid-template-columns:1fr}.daily-route{align-items:flex-start}.daily-heading button{padding:9px}.daily-route button{padding:9px}}
+
+/* Approved HaulWise cinematic navigation: six equally weighted tools. */
+#homeNav.dashboard-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:4px 0 15px}
+#homeNav.dashboard-nav .home-action,
+#homeNav.dashboard-nav .home-action.primary-action{
+ grid-column:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+ min-width:0;min-height:114px;padding:16px 8px;gap:12px;border-radius:16px;
+ background:linear-gradient(155deg,#103447 0%,#072235 55%,#041625 100%)!important;
+ border:1px solid #267389!important;box-shadow:inset 0 1px 0 #d9fcff18,0 10px 26px #0007,0 0 18px #00c7e211!important;
+ color:#e5fcff!important;font-size:14px;font-weight:750;line-height:1.25;
+}
+#homeNav.dashboard-nav .home-action .action-icon{
+ display:block;opacity:1!important;visibility:visible!important;width:30px;height:30px;
+ stroke:#2ff5f1!important;color:#2ff5f1!important;filter:drop-shadow(0 0 8px #00e9f38c);
+}
+#homeNav.dashboard-nav .home-action:hover,#homeNav.dashboard-nav .home-action:focus-visible{
+ border-color:#54faf5!important;box-shadow:0 0 0 1px #13dbe5,0 0 26px #05d4ef45!important;
+ background:linear-gradient(155deg,#155169,#09263a)!important;outline:none;
+}
+#homeNav.dashboard-nav .home-action.active{
+ border-color:#55f5ed!important;background:linear-gradient(155deg,#124c62,#092d43)!important;
+ box-shadow:inset 0 1px 0 #e0ffff24,0 0 24px #09f5e82a!important;
+}
+.work-toolbar[aria-label="Additional business tools"]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0 0 20px}
+.work-toolbar[aria-label="Additional business tools"] button{margin:0;min-width:0;min-height:46px;padding:10px 8px;font-size:13px}
+@media(max-width:730px){
+ #homeNav.dashboard-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ #homeNav.dashboard-nav .home-action,#homeNav.dashboard-nav .home-action.primary-action{
+ min-height:99px;padding:11px 4px;gap:9px;font-size:12px;border-radius:13px}
+ #homeNav.dashboard-nav .home-action .action-icon{width:28px;height:28px}
+}
+@media(max-width:350px){#homeNav.dashboard-nav .home-action{font-size:11px!important}
+ .work-toolbar[aria-label="Additional business tools"] button{font-size:12px}}
