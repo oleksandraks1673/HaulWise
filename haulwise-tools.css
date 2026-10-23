@@ -102,3 +102,30 @@
  .partner-search-grid,.partner-load-results{grid-template-columns:1fr}
  .partner-search-actions button{min-width:0}
 }
+
+/* HaulWise growth upgrades: clearer economics, documents, onboarding and backhaul planning. */
+.growth-extra-grid{background:#092a3d;border:1px solid #275d70;border-radius:13px;padding:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.growth-extra-grid label{font-size:12px;color:#c5e8ef;grid-row:1}
+.growth-extra-grid input{max-width:100%;min-width:0;width:100%}
+.growth-extra-grid p{grid-column:1/-1;margin:0;font-size:11px}
+.growth-profit-recommendation{margin:14px 0;padding:13px 15px;border:1px solid #276b78;border-radius:13px;color:#bfe6e7;background:#082b3d;line-height:1.55;font-size:13px}
+.growth-profit-recommendation[data-level="positive"]{border-color:#20b59c;color:#c7f9ec}
+.growth-profit-recommendation[data-level="loss"]{border-color:#a85b62;color:#ffd1cc}
+.growth-profit-recommendation[data-level="caution"]{border-color:#9e7b31;color:#ffedb3}
+.growth-onboarding,.growth-documents,.growth-backhaul,.growth-invite{background:linear-gradient(145deg,#0d3043,#071a29);border:1px solid #28667a;border-radius:17px;padding:17px;margin:16px 0}
+.growth-onboarding>p{font-size:13px;color:#adf3f1;font-weight:800;margin:0 0 13px}
+.growth-check{display:inline-flex;align-items:center;justify-content:center;margin:0 8px 8px 0;max-width:100%;padding:9px 12px;border-radius:11px;border:1px solid #226179;background:#082336;color:#cde9f1;font-size:12px}
+.growth-check.is-done{color:#abf0dc;border-color:#239b91}
+.growth-documents h3,.growth-backhaul h3,.growth-invite h2{color:#eaffff;margin:0 0 9px}
+.growth-documents>p,.growth-backhaul>p,.growth-invite p{font-size:13px;line-height:1.55;color:#a8c9d6}
+.growth-documents label{display:block;margin:10px 0 6px;font-size:12px;font-weight:750}
+.growth-documents select,.growth-documents input[type=file]{width:100%;max-width:520px}
+.growth-documents input[type=file]{padding:12px;background:#081e2d;border:1px solid #205c73;border-radius:12px}
+.growth-documents input::file-selector-button{color:#002633;background:#59eef0;border:0;border-radius:8px;padding:8px 12px;margin-right:10px}
+.growth-document-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #285465}
+.growth-document-row span{font-size:12px;overflow-wrap:anywhere}
+.growth-document-row button{min-width:120px;flex-shrink:0}
+.growth-match{border:1px solid #296477;padding:13px;margin:9px 0;border-radius:13px;background:#072536}
+.growth-match p{font-size:12px;color:#accfdb}
+.growth-invite button{min-height:44px}
+@media(max-width:700px){.growth-extra-grid{grid-template-columns:1fr}.growth-extra-grid label{grid-row:auto}.growth-extra-grid p{grid-column:1}.growth-document-row{flex-wrap:wrap}.growth-document-row button{flex:1}}
