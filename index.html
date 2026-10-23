@@ -80,9 +80,94 @@ main{max-width:1000px;padding-top:22px}
 }
 @media(max-width:390px){.compact-hero .hero-title{font-size:27px}.compact-hero{min-height:134px}.dashboard-nav .home-action{min-height:85px}.brand-mark{width:45px;height:45px}}
 @media(prefers-reduced-motion:reduce){#find,#profit,#equipment,#post,#mine{animation:none}}
-</style></head><body>
+
+/* HaulWise login-first cinematic homepage + compact marketplace teaser */
+body.guest{background:radial-gradient(ellipse at 82% 15%,rgba(1,188,213,.17),transparent 50%),radial-gradient(ellipse at 15% 80%,rgba(0,110,159,.15),transparent 55%),#031320;}
+body.guest header{display:none}
+body.guest main{max-width:670px;padding:33px 18px 60px}
+body.guest footer{display:none}
+body.guest #appWorkspace{display:none!important}
+.guest-portal{max-width:604px;margin:0 auto}
+.guest-portal.hidden{display:none!important}
+.entry-brand{text-align:center;margin:0 auto 24px}
+.entry-brand-mark{display:block;height:112px;width:112px;object-fit:contain;margin:0 auto 9px;border-radius:24px;filter:drop-shadow(0 0 22px rgba(1,216,234,.23))}
+.entry-brand-word{font-size:clamp(35px,6vw,49px);font-weight:900;line-height:1;letter-spacing:-1.8px;font-style:italic;color:#eff9fd;text-shadow:0 5px 23px #0005}
+.entry-brand-word span{color:#3ce2e9}
+.entry-brand-sub{font-weight:750;font-size:11px;letter-spacing:3px;color:#b9d7dc;margin-top:12px}
+.entry-brand p{margin:16px 0 0;color:#b5cdd5;font-size:15px}
+.auth-panel{border:1px solid #2c5b66;border-radius:30px;background:rgba(9,35,49,.94);padding:34px;box-shadow:0 28px 75px rgba(0,0,0,.28),inset 0 1px 0 rgba(92,225,230,.08)}
+.auth-switch{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px;border-radius:16px;background:#061e2c;margin-bottom:36px}
+.auth-switch button{border:0;box-shadow:none;background:transparent!important;color:#bed2d8!important;min-height:52px;font-size:16px;border-radius:12px;font-weight:750}
+.auth-switch button.is-selected{background:#174d58!important;color:#51e9e8!important}
+.auth-switch button:hover{transform:none;box-shadow:none!important}
+.auth-panel h1{font-size:clamp(27px,4.5vw,36px);letter-spacing:-1px;line-height:1.1;margin:0 0 9px;color:#fff}
+.auth-panel>p{color:#b7cfd5;font-size:15px;line-height:1.5;margin:0 0 22px}
+.auth-panel label{color:#d3ecf0;font-size:14px;font-weight:680;margin:20px 0 9px}
+.auth-panel input{display:block;width:100%;min-height:58px;border-radius:12px;border:1px solid #376879;background:#041b29;padding:16px 17px;font-size:16px;color:#fff}
+.auth-panel input::placeholder{color:#7895a1}
+.auth-panel input:focus{border-color:#40e7eb;box-shadow:0 0 0 3px #00cdd224;outline:none}
+.auth-panel .auth-submit{width:100%;min-height:57px;border-radius:13px;margin-top:27px;font-size:17px;font-weight:800;background:#37d8cf!important;color:#042630!important}
+.auth-panel #authMsg{min-height:14px;font-size:13px;margin:14px 0 0;color:#d5eff0}
+.market-teaser{position:relative;overflow:hidden;margin:18px auto 0;padding:25px 27px 24px;background:linear-gradient(145deg,#0a3141,#071c2e 75%);border:1px solid #205a69;border-radius:23px;box-shadow:0 15px 35px #0004}
+.market-teaser:before{content:"";position:absolute;right:-60px;top:-95px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#02d4eb24,transparent 66%);pointer-events:none}
+.market-eyebrow{position:relative;font-size:10px;letter-spacing:2px;color:#43eee9;font-weight:850}
+.pulse-dot{display:inline-block;width:7px;height:7px;background:#42e7bb;border-radius:50%;box-shadow:0 0 11px #2ef4c5;margin-right:7px}
+.market-teaser h2{position:relative;margin:11px 0;font-size:clamp(20px,3.5vw,26px);line-height:1.19;letter-spacing:-.7px}
+.market-teaser h2 span{color:#52f2ed}
+.market-teaser>p{font-size:13px;color:#b5ced8;line-height:1.55;margin:0 0 16px}
+.market-tags{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+.market-tags span{font-size:11px;color:#cce9ed;background:#092938;border:1px solid #1d5463;padding:8px 10px;border-radius:8px;white-space:nowrap}
+.market-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.market-actions button{min-height:47px;border-radius:11px;font-size:13px}
+.market-actions .market-outline{background:#102e42!important;color:#d8fbfe!important;border:1px solid #348195}
+.market-teaser .teaser-caveat{margin:12px 0 0;color:#85a9b7;font-size:11px}
+.entry-trust{text-align:center;color:#94b4bd;font-size:12px;padding:20px 0}
+@media(min-width:790px){body.guest main{padding-top:44px}.entry-brand-mark{width:132px;height:132px}.entry-brand{margin-bottom:30px}}
+@media(max-width:540px){body.guest main{padding:26px 15px 55px}.entry-brand-mark{width:104px;height:104px}.entry-brand p{font-size:14px}.auth-panel{padding:23px 21px;border-radius:24px}.auth-switch{margin-bottom:27px}.auth-switch button{font-size:15px;min-height:48px}.auth-panel input{min-height:55px}.market-teaser{padding:22px 18px;border-radius:20px}.market-tags span{font-size:10px;padding:7px 8px}.market-actions{grid-template-columns:1fr 1fr}.market-actions button{padding:11px 7px}.entry-trust{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.auth-switch button,.market-actions button{transition:none}}
+
+</style></head><body class="guest">
 <header><div class="brand-wrap"><img class="brand-mark" alt="Official HaulWise truck logo" src="data:image/webp;base64,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"><div><div class="brand">Haul<span>Wise</span></div><div class="tagline">EVERY MILE MATTERS.</div></div></div><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
 <main>
+
+<div id="guestPortal" class="guest-portal">
+  <div class="entry-brand" aria-label="HaulWise — Every Mile Matters">
+    <img class="entry-brand-mark" alt="Official HaulWise truck logo" src="data:image/webp;base64,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">
+    <div class="entry-brand-word">HAUL<span>WISE</span></div>
+    <div class="entry-brand-sub">EVERY MILE MATTERS.</div>
+    <p>Find loads. Post hauls. Earn more.</p>
+  </div>
+  <section id="auth" class="auth-panel" aria-labelledby="authTitle">
+    <div class="auth-switch" role="tablist" aria-label="Account access">
+      <button id="signinTab" type="button" role="tab" aria-selected="true" class="is-selected" onclick="setAuthMode('signin')">Sign in</button>
+      <button id="signupTab" type="button" role="tab" aria-selected="false" onclick="setAuthMode('signup')">Create account</button>
+    </div>
+    <h1 id="authTitle">Welcome back</h1>
+    <p id="authHelp">Sign in to manage your loads, trips and earnings.</p>
+    <form id="authForm" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="driver@example.com" autocomplete="email" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required>
+      <button type="submit" id="submitAuth" class="auth-submit">Sign in</button>
+    </form>
+    <p id="authMsg" role="status" aria-live="polite"></p>
+  </section>
+  <section class="market-teaser" aria-labelledby="marketTitle">
+    <div class="market-eyebrow"><span class="pulse-dot"></span> HAULWISE MARKETPLACE</div>
+    <h2 id="marketTitle">Find loads. Post hauls.<br><span>Keep every mile working.</span></h2>
+    <p>Discover hauling opportunities or post a job in minutes. Built for the trucks and trailers that move your business.</p>
+    <div class="market-tags" aria-label="Supported vehicles"><span>🛻 Pickup + Trailer</span><span>Hotshot</span><span>Semi-Truck</span><span>Cargo Van</span></div>
+    <div class="market-actions">
+      <button type="button" onclick="teaserAction('find')">Browse Loads <span aria-hidden="true">→</span></button>
+      <button type="button" class="market-outline" onclick="teaserAction('post')">Post a Haul</button>
+    </div>
+    <p class="teaser-caveat">Member-posted loads only. Sign in or create an account to continue.</p>
+  </section>
+  <div class="entry-trust">♢ &nbsp; Private &amp; secure &nbsp; · &nbsp; Built for drivers &nbsp; · &nbsp; Every mile matters</div>
+</div>
+
+<div id="appWorkspace" class="hidden">
 <section id="cinemaHero" class="cinema-hero compact-hero" aria-label="HaulWise home">
  <div class="hero-content"><h1 class="hero-title">Find your next <em>haul.</em></h1><p class="hero-desc">Built for truckers, hotshots and pickups with trailers.</p></div>
 </section>
@@ -94,7 +179,7 @@ main{max-width:1000px;padding-top:22px}
  <button type="button" class="home-action" data-tab="mine" onclick="tab('mine')"><svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 3h6v4H9zM9 12h6M9 16h5"/></svg><span>My Jobs</span></button>
 </nav>
 <div id="sectionBack" class="section-back hidden"><button type="button" class="back-button" onclick="tab('overview')" aria-label="Back to home">← <span>Home</span></button></div>
-<section id="auth" class="panel hidden" style="scroll-margin-top:110px"><h1>Welcome to HaulWise</h1><p>Find hauling opportunities or post a job. Sign in to access live community-posted listings. Until customers post jobs, there may be no loads.</p><div class="grid"><div><label>Email address</label><input id="email" type="email" autocomplete="email"></div><div><label>Password</label><input id="password" type="password" autocomplete="current-password" minlength="6"></div></div><div class="actions"><button onclick="authenticate(false)">Sign in</button><button class="secondary" onclick="authenticate(true)">Create account</button></div><p id="authMsg" role="status"></p></section>
+
 <section id="overview" class="hidden" aria-label="HaulWise home content"></section>
 <section id="profit" class="hidden"><h1>Smart Load Calculator</h1><p>Run your numbers before saying yes. All figures are editable, in Canadian dollars.</p><div class="panel"><div class="grid">
 <div><label for="calcRate">Offered haul payment (CAD)</label><input id="calcRate" type="number" min="0" value="1600" oninput="computeProfit()"></div>
@@ -111,16 +196,84 @@ main{max-width:1000px;padding-top:22px}
 <section id="find" class="hidden"><h1>Find your next haul</h1><p>Real user-posted listings will appear here after people post them. No fictional listings are passed off as available work.</p><div class="panel"><div class="grid"><div><label>Pickup city (optional)</label><input id="filterCity" placeholder="e.g. Stratford" oninput="renderLoads()"></div><div><label>Trailer type</label><select id="filterTrailer" onchange="renderLoads()"><option value="">All trailer types</option><option value="flatbed">Utility / flatbed</option><option value="enclosed">Enclosed</option><option value="gooseneck">Gooseneck</option><option value="dryvan">Dry van</option><option value="reefer">Reefer</option><option value="semiflat">Semi flatbed</option><option value="van">Cargo van</option></select></div></div><label><input type="checkbox" id="compatible" checked onchange="renderLoads()" style="width:auto;min-height:auto"> Show only compatible loads for my equipment</label></div><div id="loadList"></div></section>
 <section id="equipment" class="hidden"><h1>My equipment</h1><p>Enter your vehicle's verified cargo capacity, not the manufacturer's maximum advertised towing rating.</p><div class="panel"><div class="grid"><div><label>Vehicle</label><select id="vehicle"><option value="pickup">Pickup + trailer</option><option value="hotshot">Hotshot / dually</option><option value="semi">Semi truck</option><option value="van">Cargo van</option></select></div><div><label>Trailer</label><select id="myTrailer"><option value="flatbed">Utility / flatbed</option><option value="enclosed">Enclosed</option><option value="gooseneck">Gooseneck</option><option value="dryvan">Dry van</option><option value="reefer">Reefer</option><option value="semiflat">Semi flatbed</option><option value="van">Cargo van</option></select></div><div><label>Maximum safe cargo (kg)</label><input id="capacity" type="number" min="1" max="50000" value="1500"></div><div><label>Operating cost (CAD per km)</label><input id="cost" type="number" step=".01" min="0" max="100" value=".85"></div><div><label>Home city</label><input id="homeCity" value="Stratford"></div></div><div class="actions"><button onclick="saveEquipment()">Save Equipment</button></div><p id="equipmentMsg" role="status"></p><div class="notice">Compatibility is a preliminary filter, not a safety or legal clearance. Check GVWR/GCWR, tongue weight, brakes, dimensions, securement, licences, and insurance before accepting freight.</div></div></section>
 <section id="post" class="hidden"><h1>Post a hauling job</h1><p>Homeowners, businesses and brokers can publish hauling opportunities. A listing is visible to signed-in drivers; contact information is not publicly displayed.</p><form id="postForm" class="panel"><label>What needs hauling?</label><input name="title" minlength="4" maxlength="120" required placeholder="e.g. 2 pallets of lumber"><div class="grid"><div><label>Pickup city</label><input name="pickup_city" required></div><div><label>Destination city</label><input name="dropoff_city" required></div><div><label>Pickup province / region</label><select name="pickup_region"><option>ON</option><option>QC</option><option>BC</option><option>AB</option><option>MB</option><option>SK</option><option>NB</option><option>NS</option><option>PE</option><option>NL</option><option>US</option></select></div><div><label>Destination province / region</label><select name="dropoff_region"><option>ON</option><option>QC</option><option>BC</option><option>AB</option><option>MB</option><option>SK</option><option>NB</option><option>NS</option><option>PE</option><option>NL</option><option>US</option></select></div><div><label>Equipment needed</label><select name="trailer_type"><option value="flatbed">Utility / flatbed</option><option value="enclosed">Enclosed</option><option value="gooseneck">Gooseneck</option><option value="dryvan">Dry van</option><option value="reefer">Reefer</option><option value="semiflat">Semi flatbed</option><option value="van">Cargo van</option></select></div><div><label>Cargo weight (kg)</label><input name="cargo_kg" type="number" min="1" max="50000" required></div><div><label>Estimated loaded distance (km)</label><input name="distance_km" type="number" min="1" max="10000" required></div><div><label>Offered payment (CAD)</label><input name="pay_cad" type="number" min="1" max="1000000" step=".01" required></div><div><label>Pickup date (optional)</label><input name="pickup_date" type="date"></div></div><label>Description and load dimensions</label><textarea name="description" maxlength="1500"></textarea><div class="actions"><button type="submit">Publish Load</button></div><p id="postMsg" role="status"></p></form></section>
-<section id="mine" class="hidden"><h1>My posted jobs & requests</h1><div id="myJobs"></div></section><footer><p class="muted">HaulWise Beta • No load guarantee, escrow, or automatic booking. Never pay upfront fees to unknown brokers. Always verify carrier authority, insurance, and cargo particulars.</p></footer></main>
+<section id="mine" class="hidden"><h1>My posted jobs & requests</h1><div id="myJobs"></div></section></div><!-- /appWorkspace -->
+<footer><p class="muted">HaulWise Beta • No load guarantee, escrow, or automatic booking. Never pay upfront fees to unknown brokers. Always verify carrier authority, insurance, and cargo particulars.</p></footer></main>
 <script>
 const api=supabase.createClient('https://dwtnfrjwnweviunxdams.supabase.co','sb_publishable_pDlu_Truafvo0cPMepadDg_0cQ46bwE');let user=null,loads=[],equip=null;
 const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const cad=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(n);
-function tab(name){for(const t of ['overview','find','profit','equipment','post','mine'])$(t).classList.toggle('hidden',t!==name);document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===name);b.setAttribute('aria-current',b.dataset.tab===name?'page':'false')});const home=name==='overview';$('cinemaHero').classList.toggle('hidden',!home);$('homeNav').classList.toggle('hidden',!home);$('sectionBack').classList.toggle('hidden',home);$('auth').classList.add('hidden');if(name==='mine')renderMine();if(name==='profit')computeProfit();window.scrollTo({top:0,behavior:'smooth'})}
-function showAuth(){$('auth').classList.remove('hidden');$('auth').scrollIntoView({behavior:'smooth',block:'start'})}
-async function authenticate(signup){let email=$('email').value.trim(),password=$('password').value;if(!email||password.length<6){$('authMsg').textContent='Enter an email and a password of at least 6 characters.';return}const {error}=signup?await api.auth.signUp({email,password}):await api.auth.signInWithPassword({email,password});$('authMsg').textContent=error?error.message:signup?'Account created. Check your email if confirmation is required.':'Signed in!'}
-async function signOut(){await api.auth.signOut()}
-async function refreshAuth(){const {data:{user:u}}=await api.auth.getUser();user=u;if(u)$('auth').classList.add('hidden');$('authBtn').classList.toggle('hidden',!!u);$('logoutBtn').classList.toggle('hidden',!u);if(user){await Promise.all([fetchEquipment(),fetchLoads()])}else{loads=[];equip=null;renderLoads()} }
+
+let authMode='signin',queuedSection=null,loadedUserId=null;
+function setAuthMode(mode){
+ authMode=mode==='signup'?'signup':'signin';
+ $('signinTab').classList.toggle('is-selected',authMode==='signin');
+ $('signupTab').classList.toggle('is-selected',authMode==='signup');
+ $('signinTab').setAttribute('aria-selected',String(authMode==='signin'));
+ $('signupTab').setAttribute('aria-selected',String(authMode==='signup'));
+ $('authTitle').textContent=authMode==='signup'?'Join HaulWise':'Welcome back';
+ $('authHelp').textContent=authMode==='signup'?'Create your account to find loads, post hauls and manage your work.':'Sign in to manage your loads, trips and earnings.';
+ $('submitAuth').textContent=authMode==='signup'?'Create account':'Sign in';
+ $('password').setAttribute('autocomplete',authMode==='signup'?'new-password':'current-password');
+ $('password').setAttribute('placeholder',authMode==='signup'?'Create a password (6+ characters)':'Enter your password');
+ $('authMsg').textContent='';
+}
+function showAuth(){
+ $('guestPortal').classList.remove('hidden');
+ $('auth').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function teaserAction(section){
+ if(user){tab(section);return}
+ queuedSection=section;
+ $('authMsg').textContent=section==='post'?'Sign in or create an account to post your haul.':'Sign in or create an account to browse available loads.';
+ showAuth();
+}
+function tab(name){
+ if(!user){queuedSection=name==='overview'?null:name;showAuth();return}
+ for(const t of ['overview','find','profit','equipment','post','mine'])$(t).classList.toggle('hidden',t!==name);
+ document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===name);b.setAttribute('aria-current',b.dataset.tab===name?'page':'false')});
+ const home=name==='overview';
+ $('cinemaHero').classList.toggle('hidden',!home);
+ $('homeNav').classList.toggle('hidden',!home);
+ $('sectionBack').classList.toggle('hidden',home);
+ if(name==='mine')renderMine();
+ if(name==='profit')computeProfit();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+$('authForm').addEventListener('submit',e=>{e.preventDefault();authenticate()});
+async function authenticate(){
+ const email=$('email').value.trim(),password=$('password').value,signup=authMode==='signup';
+ if(!/^\S+@\S+\.\S+$/.test(email)||password.length<6){$('authMsg').textContent='Enter a valid email and a password of at least 6 characters.';return}
+ $('submitAuth').disabled=true;
+ $('authMsg').textContent=signup?'Creating your account…':'Signing in…';
+ try{
+   const {data,error}=signup?await api.auth.signUp({email,password}):await api.auth.signInWithPassword({email,password});
+   if(error){$('authMsg').textContent=error.message;return}
+   if(signup&&!data.session){$('authMsg').textContent='Check your email to confirm your account, then sign in.';return}
+   $('authMsg').textContent='Signed in successfully.';
+   await refreshAuth();
+ }catch(err){$('authMsg').textContent='Unable to sign in right now. Please try again.'}
+ finally{$('submitAuth').disabled=false}
+}
+async function signOut(){await api.auth.signOut();loadedUserId=null;queuedSection=null;await refreshAuth()}
+async function refreshAuth(){
+ const {data:{user:u},error}=await api.auth.getUser();
+ user=error?null:u;
+ document.body.classList.toggle('guest',!user);
+ $('guestPortal').classList.toggle('hidden',!!user);
+ $('appWorkspace').classList.toggle('hidden',!user);
+ $('authBtn').classList.toggle('hidden',!!user);
+ $('logoutBtn').classList.toggle('hidden',!user);
+ if(user){
+   $('password').value='';
+   if(loadedUserId!==user.id){loadedUserId=user.id;await Promise.all([fetchEquipment(),fetchLoads()])}
+   const destination=queuedSection||'overview';
+   queuedSection=null;
+   tab(destination);
+ }else{
+   loadedUserId=null;loads=[];equip=null;renderLoads();
+ }
+}
 api.auth.onAuthStateChange(()=>setTimeout(refreshAuth,0));
+
 async function fetchLoads(){if(!user)return;let {data,error}=await api.from('marketplace_loads').select('*').eq('status','open').order('created_at',{ascending:false}).limit(100);if(error){$('loadList').textContent=error.message;return}loads=data||[];renderLoads()}
 function renderLoads(){const city=$('filterCity').value.trim().toLowerCase(),trailer=$('filterTrailer').value,comp=$('compatible').checked;const filtered=loads.filter(l=>(!city||l.pickup_city.toLowerCase().includes(city))&&(!trailer||l.trailer_type===trailer)&&(!comp||!equip||(l.trailer_type===equip.trailer_type&&l.cargo_kg<=equip.cargo_capacity_kg)));$('loadList').innerHTML=!user?'<div class="empty">Sign in to see posted hauling jobs.</div>':!filtered.length?'<div class="empty">No matching real jobs have been posted yet. Try changing your filters, or invite someone to post a load.</div>':filtered.map(l=>{const profit=equip?Number(l.pay_cad)-Number(l.distance_km)*Number(equip.running_cost_per_km):null;return '<article class="load"><div class="row"><span class="pill">'+esc(l.trailer_type)+'</span><strong>'+cad(l.pay_cad)+'</strong></div><h3>'+esc(l.title)+'</h3><p>📍 '+esc(l.pickup_city)+', '+esc(l.pickup_region)+' → '+esc(l.dropoff_city)+', '+esc(l.dropoff_region)+'</p><div class="row"><small>'+esc(l.cargo_kg)+' kg · '+esc(l.distance_km)+' loaded km'+(l.pickup_date?' · '+esc(l.pickup_date):'')+'</small>'+(profit!==null?'<span class="money">'+cad(profit)+'</span>':'')+'</div><p>'+esc(l.description)+'</p><div class="actions"><button onclick="expressInterest(\''+l.id+'\')">I’m Interested</button></div><small>Estimates exclude pickup travel, tax, fixed costs, and unlisted expenses.</small></article>'}).join('')}
 async function fetchEquipment(){let {data}=await api.from('driver_equipment').select('*').eq('user_id',user.id).maybeSingle();equip=data;if(data){$('vehicle').value=data.vehicle_type;$('myTrailer').value=data.trailer_type;$('capacity').value=data.cargo_capacity_kg;$('cost').value=data.running_cost_per_km;$('homeCity').value=data.home_city}}
