@@ -123,8 +123,8 @@ document.addEventListener('click',e=>{
 const originalRefresh=refreshAuth;
 refreshAuth=async function(){await originalRefresh();if(user?.id)setupProgress();else{selectedTrip=null;$g('growthDocuments').hidden=true;$g('growthBackhaul').hidden=true;}};
 $g('growthInviteButton')?.addEventListener('click',async()=>{
- const invitation='Drivers: try HaulWise for trip profit calculations, trip tracking, and freight-board links. Built for hotshots, pickup trailers and semis. Early-stage platform: https://haulwise-murex.vercel.app/';
- try{await navigator.clipboard.writeText(invitation);$g('growthInviteMessage').textContent='Invitation copied. Share with drivers who would like to test HaulWise.';}
+ const invitation='Drivers: try MileForge for trip profit calculations, trip tracking, and freight-board links. Built for hotshots, pickup trailers and semis. Early-stage platform: https://haulwise-murex.vercel.app/';
+ try{await navigator.clipboard.writeText(invitation);$g('growthInviteMessage').textContent='Invitation copied. Share with drivers who would like to test MileForge.';}
  catch{$g('growthInviteMessage').textContent='Use https://haulwise-murex.vercel.app/ to invite drivers.';}
 });
 })();

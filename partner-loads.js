@@ -40,7 +40,7 @@
     const uid = user.id, version = ++requestVersion;
     setSearchEnabled(false);
     pill('Checking connection…', 'checking');
-    message('Checking HaulWise partner authorization status.', 'checking');
+    message('Checking MileForge partner authorization status.', 'checking');
     const refreshButton = el('haulwisePartnerRefresh');
     if(refreshButton) refreshButton.disabled = true;
     try{
@@ -53,7 +53,7 @@
       pill(connected ? 'Authorized feed connected' : data?.status === 'suspended' ? 'Provider access paused' : 'Awaiting 123Loadboard approval',
         connected ? 'connected' : 'pending');
       message(connected
-        ? 'Partner-authorized loads can now be searched inside HaulWise. Rates and availability must be verified with the posting broker.'
+        ? 'Partner-authorized loads can now be searched inside MileForge. Rates and availability must be verified with the posting broker.'
         : 'API request submitted. Waiting for 123Loadboard to authorize the integration and issue credentials. Search their official load board using the link below in the meantime.',
         connected ? 'connected' : 'pending');
       if(!connected) clearResults();
@@ -61,7 +61,7 @@
       if(version !== requestVersion || user?.id !== uid) return;
       setSearchEnabled(false);
       pill('Unable to verify connection', 'error');
-      message('Could not reach the HaulWise load API. Use the external load board links or try refreshing connection status.', 'error');
+      message('Could not reach the MileForge load API. Use the external load board links or try refreshing connection status.', 'error');
     }finally{
       if(version === requestVersion && refreshButton) refreshButton.disabled = false;
     }
