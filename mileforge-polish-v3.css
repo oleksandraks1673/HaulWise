@@ -1,0 +1,69 @@
+/* MileForge v3: restrained production polish. Preserves approved cinematic theme. */
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body:not(.guest) #appWorkspace{min-width:0}
+body:not(.guest)>header{box-shadow:0 8px 28px #0007,inset 0 -1px 0 #4be4ff10}
+body:not(.guest)>header nav button{border-radius:12px;border-color:#28627c}
+body:not(.guest)>main{min-width:0}
+#cinemaHero .hero-content{padding-inline:4px}
+#cinemaHero .hero-title{font-weight:900;text-wrap:balance}
+#cinemaHero .hero-desc{color:#d4e5ec;text-wrap:pretty}
+#cinemaHero .cinema-hero-cta{min-height:47px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-decoration:none;font:inherit;font-size:14px;font-weight:800;letter-spacing:0;border:1px solid #48efff}
+#homeNav.dashboard-nav .home-action{position:relative;min-width:0;touch-action:manipulation}
+#homeNav.dashboard-nav .home-action .nav-action-label{line-height:1.3;overflow-wrap:normal;text-wrap:balance;color:#f1fdff}
+#homeNav.dashboard-nav .home-action .nav-icon-frame{transition:transform .18s ease}
+@media(hover:hover){#homeNav.dashboard-nav .home-action:hover .nav-icon-frame{transform:translateY(-2px)}}
+body:not(.guest) .daily-card,body:not(.guest) .work-card{min-width:0}
+body:not(.guest) .daily-card small{line-height:1.45;color:#b8d2de}
+body:not(.guest) .daily-card strong{font-variant-numeric:tabular-nums}
+body:not(.guest) .work-card h3{overflow-wrap:anywhere}
+body:not(.guest) .work-card .actions{gap:8px}
+body:not(.guest) .work-card .actions button{white-space:normal;min-height:42px}
+body:not(.guest) .work-toolbar button{min-height:51px}
+body:not(.guest) .panel label{line-height:1.35}
+body:not(.guest) select,body:not(.guest) input,body:not(.guest) textarea{outline-offset:2px}
+body.guest .entry-brand p{color:#c3dce7;letter-spacing:.05px}
+body.guest .auth-panel h1{letter-spacing:-.8px}
+body.guest .auth-panel #authHelp{color:#c1dae5;line-height:1.6}
+body.guest .auth-panel label{font-weight:650;letter-spacing:.05px}
+body.guest .auth-panel input{border:1px solid #3b7188;min-height:53px;border-radius:13px;background:#041a29}
+body.guest .auth-panel input::placeholder{color:#93aebd;opacity:1}
+body.guest .auth-panel .auth-submit{border-radius:13px;min-height:53px}
+.mf-password-wrap{position:relative;width:100%}
+.mf-password-wrap input{padding-right:79px!important}
+body.guest button.mf-password-toggle{position:absolute;right:5px;top:50%;transform:translateY(-50%);
+ background:#10394c!important;color:#b8f5f8!important;border:1px solid #3c7387!important;
+ border-radius:10px!important;min-width:62px;height:38px;min-height:38px;padding:5px 10px!important;
+ font-size:13px;font-weight:750;box-shadow:none!important}
+body.guest button.mf-password-toggle:hover{background:#145269!important}
+body.guest .auth-switch button{min-height:51px}
+body.guest .auth-switch button.is-selected{box-shadow:inset 0 1px 0 #ffffff2b!important}
+.cinema-bottom-nav{box-shadow:0 -9px 26px #000a,0 -1px 0 #3af3ff15}
+.cinema-bottom-nav .cinema-bottom-button{min-height:52px;touch-action:manipulation}
+.cinema-bottom-nav .cinema-bottom-button.active{color:#49f4ff;font-weight:780}
+.cinema-bottom-nav .cinema-bottom-button[aria-expanded="true"]{background:#0a344a!important;color:#6af8ff}
+.cinema-more-menu button{min-height:46px;white-space:normal;touch-action:manipulation}
+.cinema-bottom-button:focus-visible,.cinema-more-menu button:focus-visible,
+#homeNav .home-action:focus-visible,body.guest .auth-panel button:focus-visible,
+body.guest .auth-panel input:focus-visible,body:not(.guest) button:focus-visible,
+body:not(.guest) a:focus-visible{outline:2px solid #61ffff!important;outline-offset:3px!important}
+#sectionBack .back-button{min-height:44px}
+.work-toolbar[aria-label="Additional business tools"] .secondary{white-space:normal}
+@media(max-width:700px){
+ body:not(.guest)>main{padding-left:12px;padding-right:12px}
+ body:not(.guest) input,body:not(.guest) select,body:not(.guest) textarea,
+ body.guest input,body.guest select,body.guest textarea{font-size:16px}
+ #cinemaHero .hero-title{letter-spacing:-.85px}
+ #homeNav.dashboard-nav .home-action .nav-action-label{font-size:12px;max-width:100%}
+ #homeNav.dashboard-nav .home-action{min-height:105px}
+ .cinema-bottom-nav{padding-bottom:calc(6px + env(safe-area-inset-bottom))}
+ .cinema-bottom-nav .cinema-bottom-button{min-height:51px}
+ body:not(.guest) .work-card .actions{display:flex;flex-wrap:wrap}
+ body:not(.guest) .work-card .actions button{flex:1 1 125px}
+}
+@media(max-width:390px){#homeNav.dashboard-nav .home-action .nav-action-label{font-size:11px}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ #homeNav.dashboard-nav .home-action .nav-icon-frame{transition:none}
+ #homeNav.dashboard-nav .home-action:hover .nav-icon-frame{transform:none}
+}
