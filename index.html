@@ -144,13 +144,20 @@ body.guest #appWorkspace{display:none!important}
 
 /* crisp proportional SVG, no blurring filters */
 .mileforge-header-logo,.entry-approved-logo{image-rendering:auto;filter:none;object-fit:contain}.entry-approved-logo{aspect-ratio:800/170;max-width:550px;max-height:none}
+
+/* Restore the original approved stacked truck + MileForge logo.
+   Override previous horizontal-lockup rules; preserve the rest of the UI. */
+header .mileforge-header-logo{width:clamp(108px,12vw,132px);height:auto;max-height:76px;aspect-ratio:3/2;object-fit:contain;filter:none}
+body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px);max-width:100%;height:auto;max-height:none;aspect-ratio:3/2;object-fit:contain;object-position:center;margin:0 auto 14px;filter:none}
+@media(max-width:730px){header .mileforge-header-logo{width:112px;max-height:75px}}
+@media(max-width:540px){body.guest .entry-brand .entry-approved-logo{width:min(78vw,320px);max-height:none;margin-bottom:14px}}
 </style><link rel="stylesheet" href="/haulwise-tools.css?v=20261023-seven"><link rel="stylesheet" href="/profit-calculator.css?v=20261023"></head><body class="guest">
-<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-logo-sharp-v13.svg" width="400" height="75" alt="MileForge truck and wordmark"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
+<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="MileForge original truck logo"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
 <main>
 
 <div id="guestPortal" class="guest-portal">
   <div class="entry-brand" aria-label="MileForge">
-    <img class="entry-approved-logo" src="/icons/mileforge-logo-sharp-v13.svg" alt="MileForge" width="420" height="110">
+    <img class="entry-approved-logo" src="/icons/mileforge-original-restored-v14.svg" alt="MileForge original truck logo" width="360" height="240">
     <p>Load management. Clear costs. Smarter decisions.</p><p class="public-calc-link"><a href="/calculator.html" style="color:#5deaf4;font-weight:750;text-decoration:underline;text-underline-offset:4px">Try the free load calculator →</a></p>
   </div>
   <section id="auth" class="auth-panel" aria-labelledby="authTitle">
