@@ -1,0 +1,61 @@
+/* MileForge My Loads — ad-matched live data dashboard. Isolated to the Loads section. */
+#log:not(.hidden){padding-top:8px!important}
+#log:not(.hidden)>.row:first-child{align-items:center!important;margin-bottom:14px!important}
+#log #logTitle{font-size:clamp(25px,5.9vw,32px)!important;letter-spacing:-.7px!important}
+#log:not(.hidden)>.row:first-child>div p{color:#aecad5!important;font-size:13px!important}
+#log:not(.hidden)>.row:first-child button{font-weight:800!important;font-size:13px!important;min-height:44px!important}
+#log #growthOnboarding{padding:16px!important;border-color:#29556a!important;background:linear-gradient(140deg,#092a3d,#061c2d)!important;border-radius:18px!important;box-shadow:none!important;margin:12px 0 14px!important;gap:0!important}
+#log #growthOnboarding>p{font-size:15px!important;letter-spacing:-.25px!important;margin-bottom:9px!important;color:#f2fcff!important}
+#log #growthOnboarding .mf-setup-progress{height:6px!important;margin-bottom:13px!important}
+#log #growthOnboarding button.growth-check{background:transparent!important;border:0!important;border-top:1px solid #214556!important;border-radius:0!important;min-height:36px!important;margin:0!important;padding:8px 4px!important;font-weight:650!important;color:#d1e8f2!important;box-shadow:none!important;font-size:12px!important}
+#log #growthOnboarding button.growth-check.is-done{color:#59e6d2!important}
+#log #growthOnboarding button.growth-check:hover{background:#0a3645!important}
+#log #tripSummary .work-summary{gap:10px!important;margin:13px 0 9px!important}
+#log #tripSummary .work-summary article{min-height:92px!important;padding:14px!important;background:linear-gradient(135deg,#0b3145,#072339)!important;border-radius:15px!important;border:1px solid #28566a!important;box-shadow:none!important}
+#log #tripSummary .work-summary article[data-stat="remaining"]{background:linear-gradient(105deg,#0c3a45,#092938)!important}
+#log #tripSummary .work-summary .muted{display:block!important;color:#aac8d7!important;font-size:11px!important;line-height:1.4!important}
+#log #tripSummary .work-summary strong{display:block!important;font-size:clamp(21px,6vw,28px)!important;letter-spacing:-.45px;margin-top:8px;color:#5be8c9!important;white-space:normal;overflow-wrap:anywhere}
+#log #mfAdRecentTop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:15px 0 10px}
+#log #mfAdRecentTop .mf-recent-heading{margin:0!important;font-size:19px!important;line-height:1.2!important}
+#log #mfAdRecentTop .mf-ad-view-all{padding:9px 7px!important;background:none!important;box-shadow:none!important;border:0!important;color:#51e6ee!important;font-size:12px!important;font-weight:700!important;min-height:38px}
+#log #mfAdRecentTop .mf-ad-view-all[hidden]{display:none!important}
+#log #tripRecordCount{font-size:11px!important;color:#7fa9b9!important}
+#log #tripList{display:grid;gap:10px}
+#log #tripList>.mf-ad-load-card{padding:13px!important;border:1px solid #285a72!important;background:linear-gradient(130deg,#0b2e42,#061e32)!important;border-radius:16px!important;box-shadow:none!important;margin:0!important;min-width:0}
+#log #tripList>.mf-ad-load-card[hidden]{display:none!important}
+#log .mf-ad-card-main{display:flex;gap:11px;align-items:center;min-width:0}
+#log .mf-ad-truck{flex:0 0 55px;width:55px;height:55px;border:1px solid #2b677c;border-radius:11px;background:linear-gradient(155deg,#174a5f,#082138);overflow:hidden;display:grid;place-items:center}
+#log .mf-ad-truck img{width:100%;height:100%;object-fit:contain;padding:4px;filter:drop-shadow(0 3px 7px #0006)}
+#log .mf-ad-route-area{min-width:0;flex:1 1 auto}
+#log .mf-ad-route{margin:0 0 4px!important;font-size:clamp(13px,3.8vw,16px)!important;line-height:1.27!important;color:#f5fbff!important;letter-spacing:-.3px!important;overflow-wrap:anywhere}
+#log .mf-ad-reference{font-size:11px!important;margin:0 0 6px!important;color:#a6c6d1!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#log .mf-load-badges{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+#log .mf-ad-status,#log .mf-ad-payment{font-size:10px;line-height:1.2;padding:4px 7px;border-radius:6px;border:1px solid #287681;background:#104451;color:#8bf1f4;font-weight:750;white-space:nowrap}
+#log .mf-status-delivered,#log .mf-status-completed,#log .mf-status-paid,#log .mf-ad-payment.is-paid{background:#124a3a;color:#8bf2bf;border-color:#2b8f6b}
+#log .mf-status-in_transit,#log .mf-status-picked_up{background:#5b3c13;color:#ffd28b;border-color:#9e681d}
+#log .mf-status-cancelled{background:#4e2730;color:#ffbbc0;border-color:#784153}
+#log .mf-ad-payment.is-due{background:#342d47;color:#dbcafa;border-color:#5f4a83}
+#log .mf-ad-price{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:0 0 auto;max-width:34%}
+#log .mf-ad-price-label{font-size:10px;line-height:1.1;color:#a8c4cf;text-align:right}
+#log .mf-ad-price strong{font-size:clamp(15px,4.2vw,20px);color:#60e6c0;letter-spacing:-.4px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;text-align:right}
+#log .mf-ad-dates{margin:8px 0 0 66px!important;color:#9cbcc9!important;font-size:11px!important}
+#log .mf-ad-load-details{margin-top:11px;border-top:1px solid #285064}
+#log .mf-ad-load-details>summary{cursor:pointer;min-height:39px;display:flex;align-items:center;justify-content:space-between;color:#6ce4e8;font-size:12px;font-weight:750;list-style:none;outline-offset:2px}
+#log .mf-ad-load-details>summary::-webkit-details-marker{display:none}
+#log .mf-ad-load-details>summary::after{content:'⌄';font-size:21px;line-height:1}
+#log .mf-ad-load-details[open]>summary::after{transform:rotate(180deg)}
+#log .mf-ad-detail-content{padding:8px 0}
+#log .mf-ad-costs,#log .mf-ad-load-notes{font-size:12px!important;color:#b4d4df!important;margin:0 0 10px!important;overflow-wrap:anywhere}
+#log .mf-ad-detail-content>.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:10px 0}
+#log .mf-ad-detail-content>.actions button{width:100%;min-width:0;min-height:41px;padding:9px 8px;font-size:11px!important;white-space:normal;line-height:1.2}
+#log .mf-ad-detail-content [id^="status-"]{margin-top:7px}
+#log .mf-ad-load-details:focus-within>summary{color:#a9ffff}
+#log>.work-note.mf-short-note{font-size:11px!important;margin-bottom:13px!important;color:#92b6c2!important}
+@media(max-width:425px){
+ #log #tripList>.mf-ad-load-card{padding:11px!important}
+ #log .mf-ad-truck{width:48px;height:49px;flex-basis:48px}
+ #log .mf-ad-card-main{gap:8px}
+ #log .mf-ad-dates{margin-left:56px!important}
+ #log .mf-ad-price{max-width:33%}
+}
+@media(min-width:760px){#log #tripSummary .work-summary{grid-template-columns:repeat(3,minmax(0,1fr))!important}#log #tripSummary .work-summary article:last-child{grid-column:auto!important}}
