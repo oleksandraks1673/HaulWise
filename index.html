@@ -138,13 +138,16 @@ body.guest #appWorkspace{display:none!important}
 
 /* MileForge approved horizontal truck artwork, responsive header */
 .mileforge-header-link{flex:0 1 auto;max-width:calc(100% - 96px);overflow:hidden}.mileforge-header-logo{display:block;width:clamp(214px,25vw,282px);height:auto;max-height:64px;object-fit:contain;object-position:left center}@media(max-width:730px){.mileforge-header-logo{width:clamp(188px,57vw,260px);max-height:53px}}@media(max-width:390px){.mileforge-header-logo{width:clamp(182px,54vw,213px);max-height:48px}}
+
+/* Unified approved Mile Forge identity, truck left and spaced wordmark right */
+.mileforge-header-logo{width:clamp(218px,27vw,282px);max-height:66px;object-fit:contain}.entry-approved-logo{width:min(100%,510px);max-height:none;aspect-ratio:440/106;height:auto;object-fit:contain;margin:0 auto 18px}@media(max-width:730px){.mileforge-header-logo{width:clamp(180px,55vw,250px);max-height:55px}}@media(max-width:540px){.entry-approved-logo{width:min(94vw,460px);max-height:none;margin-bottom:13px}}@media(max-width:390px){.mileforge-header-logo{width:clamp(174px,52vw,205px)}}
 </style><link rel="stylesheet" href="/haulwise-tools.css?v=20261023-seven"><link rel="stylesheet" href="/profit-calculator.css?v=20261023"></head><body class="guest">
-<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-header-truck-v11.svg" width="400" height="75" alt="MileForge truck and wordmark"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
+<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-approved-lockup-v12.svg" width="400" height="75" alt="MileForge truck and wordmark"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
 <main>
 
 <div id="guestPortal" class="guest-portal">
   <div class="entry-brand" aria-label="MileForge">
-    <img class="entry-approved-logo" src="/icons/mileforge-wordmark-v10.svg" alt="MileForge" width="420" height="110">
+    <img class="entry-approved-logo" src="/icons/mileforge-approved-lockup-v12.svg" alt="MileForge" width="420" height="110">
     <p>Load management. Clear costs. Smarter decisions.</p><p class="public-calc-link"><a href="/calculator.html" style="color:#5deaf4;font-weight:750;text-decoration:underline;text-underline-offset:4px">Try the free load calculator →</a></p>
   </div>
   <section id="auth" class="auth-panel" aria-labelledby="authTitle">
