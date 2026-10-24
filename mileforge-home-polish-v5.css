@@ -107,3 +107,54 @@ body:not(.guest) #cinemaBottomNav .cinema-bottom-button[aria-expanded="true"]{
 @media(prefers-reduced-motion:reduce){
  #homeNav .home-action,#cinemaHero .cinema-hero-cta{transition:none!important}
 }
+
+/* MileForge cinematic truck photo: dedicated image asset, real UI above it. */
+#cinemaHero.cinema-hero.compact-hero{
+  isolation:isolate;
+  min-height:380px;
+  padding:34px 24px 32px;
+  overflow:hidden;
+  background:#041321;
+}
+#cinemaHero.cinema-hero.compact-hero::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background-image:linear-gradient(90deg,rgba(2,12,26,.94) 0%,rgba(2,15,29,.82) 32%,rgba(2,16,30,.18) 82%),url('/icons/mileforge-photoreal-truck-hero-v1.svg');
+  background-size:cover;
+  background-position:center 52%;
+  background-repeat:no-repeat;
+}
+#cinemaHero.cinema-hero.compact-hero::after{
+  background:linear-gradient(0deg,#03111ed9 0%,transparent 33%),linear-gradient(90deg,transparent,#39efff88,transparent) bottom / 70% 1px no-repeat;
+}
+#cinemaHero .hero-content{
+  position:relative;z-index:1;
+  align-items:flex-start;
+  text-align:left;
+  max-width:900px;
+}
+#cinemaHero .hero-command-label{justify-content:flex-start}
+#cinemaHero .hero-title,#cinemaHero .hero-desc{
+  text-align:left;margin-left:0;
+  max-width:min(56%,460px);
+}
+#cinemaHero .cinema-hero-cta{margin-left:0;max-width:100%}
+@media(max-width:650px){
+ #cinemaHero.cinema-hero.compact-hero{
+   min-height:420px;padding:24px 16px 27px;
+   align-items:flex-start;
+ }
+ #cinemaHero.cinema-hero.compact-hero::before{
+   background-image:linear-gradient(180deg,#02101de6 0%,#031626ad 34%,#03162634 67%,#0415239c 100%),url('/icons/mileforge-photoreal-truck-hero-v1.svg');
+   background-position:center,57% 66%;
+   background-size:cover,auto 100%;
+ }
+ #cinemaHero .hero-content{align-items:center;text-align:center}
+ #cinemaHero .hero-command-label{justify-content:center}
+ #cinemaHero .hero-title,#cinemaHero .hero-desc{max-width:100%;margin-left:auto;text-align:center}
+ #cinemaHero .hero-title{font-size:clamp(28px,6.7vw,35px)}
+ #cinemaHero .cinema-hero-cta{margin:165px auto 0;position:relative;z-index:1}
+}
+@media(max-width:370px){
+ #cinemaHero.cinema-hero.compact-hero{min-height:420px}
+ #cinemaHero .cinema-hero-cta{margin-top:135px}
+}
