@@ -20,7 +20,7 @@ const b=await api.from('mileforge_invoice_payments').select('*').eq('user_id',ui
 if(b.error){$('mfInvoiceMessage').textContent=b.error.message;return}
 if(user?.id!==uid)return;payments=b.data||[];
 drawButtons();
-if(selected)drawSelected();
+if(selected)drawSelected(false);
 }
 function drawButtons(){
 const list=$('tripList');if(!list)return;
@@ -34,9 +34,9 @@ list.querySelectorAll('article.work-card').forEach(card=>{
  actions.appendChild(button);
 });
 }
-function drawSelected(){
+function drawSelected(shouldScroll=true){
 const trip=workTrips.find(t=>t.id===selected);if(!trip){panel.hidden=true;return}
-panel.hidden=false;panel.scrollIntoView({behavior:'smooth',block:'start'});
+panel.hidden=false;if(shouldScroll)panel.scrollIntoView({behavior:'smooth',block:'start'});
 $('mfInvoiceTitle').textContent='Invoice & payment tracking';
 $('mfInvoiceSubtitle').textContent=(trip.load_reference||'Load')+' · '+(trip.origin||'Pickup')+' → '+(trip.destination||'Destination');
 const inv=getInv(selected),slot=$('mfInvoiceContents');
