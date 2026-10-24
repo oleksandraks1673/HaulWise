@@ -1,0 +1,59 @@
+/* MileForge cinematic app visual system */
+:root{--cinema-bg:#02101d;--cinema-card:#041a2c;--cinema-line:#1d526a;--cinema-blue:#00d6ff}
+body{background:#020e1c;color:#f2faff}
+body:not(.guest){padding-bottom:76px;background:radial-gradient(ellipse at top,#0a2c47 0,#041726 42%,#020b18 100%) fixed}
+body:not(.guest)>header{height:68px;background:rgba(2,13,27,.95);border-bottom:1px solid #1c5573;box-shadow:0 7px 30px #0006}
+body:not(.guest)>main{max-width:1100px;padding:18px 16px 105px}
+body:not(.guest) #appWorkspace > section:not(#cinemaHero):not(.hidden) > h1,
+body:not(.guest) #appWorkspace > section:not(#cinemaHero):not(.hidden) > .row h1{font-size:clamp(24px,3.8vw,34px);letter-spacing:-.8px}
+body:not(.guest) .panel,body:not(.guest) .load,body:not(.guest) .work-card,body:not(.guest) .daily-card,
+body:not(.guest) .growth-onboarding,body:not(.guest) .growth-documents,body:not(.guest) .growth-backhaul,
+body:not(.guest) .growth-invite{background:linear-gradient(155deg,#0b2e43e8,#041726f5 75%);border:1px solid #1e5a78;border-radius:20px;box-shadow:inset 0 1px #9feaff16,0 12px 30px #0005}
+body:not(.guest) .panel,body:not(.guest) .work-card{padding:clamp(16px,3vw,23px)}
+body:not(.guest) .daily-card{padding:20px}
+body:not(.guest) .daily-card strong{color:#2defff;text-shadow:0 0 18px #00cffa4c}
+body:not(.guest) button:not(.secondary):not(.home-action):not(.back-button):not(.cinema-bottom-button){background:linear-gradient(115deg,#00c8f4,#12e4fb);color:#031724;box-shadow:0 3px 14px #04c5ee34}
+body:not(.guest) input,body:not(.guest) select,body:not(.guest) textarea{background:#031626;border:1px solid #2e6480;min-height:48px;border-radius:12px}
+body:not(.guest) input:focus,body:not(.guest) select:focus,body:not(.guest) textarea:focus{outline:2px solid #04dafa;outline-offset:1px}
+#cinemaHero.cinema-hero.compact-hero{min-height:340px;padding:45px 22px 37px;border:1px solid #146383;box-shadow:0 22px 60px #0009,0 0 35px #029cda28;margin:0 0 23px;background:#041321}
+#cinemaHero.cinema-hero.compact-hero::before{background:linear-gradient(180deg,#020b17bd 0%,#04152665 30%,#020b19a8 84%,#020c18 100%),url('/icons/mileforge-cinema-landscape-v2.svg') center 61%/cover no-repeat}
+#cinemaHero.cinema-hero.compact-hero::after{background:linear-gradient(90deg,transparent,#39efff99,transparent) bottom/70% 1px no-repeat}
+#cinemaHero .hero-title{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-1.7px}
+#cinemaHero .hero-desc{font-size:clamp(13px,2vw,16px);color:#d4eaf2;max-width:470px}
+#cinemaHero .hero-command-label{color:#21e6ff;font-size:10px}
+#cinemaHero .cinema-hero-cta{display:inline-flex;align-items:center;justify-content:center;margin-top:21px;padding:12px 25px;border-radius:12px;text-decoration:none;background:#00cffa;color:#021929;font-weight:800;box-shadow:0 0 22px #00d9ff7e}
+#homeNav.dashboard-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#homeNav.dashboard-nav .home-action{background:linear-gradient(155deg,#0b3048,#031828);min-height:112px;border-color:#176184}
+#homeNav.dashboard-nav .home-action .nav-icon-frame{border-color:#20b9d770}
+#appWorkspace .daily-heading h2{font-size:clamp(20px,3vw,26px)}
+.cinema-bottom-nav{position:fixed;inset:auto 0 0;z-index:160;display:flex;align-items:stretch;justify-content:center;gap:0;min-height:65px;padding:5px max(5px,calc((100vw - 600px)/2)) calc(5px + env(safe-area-inset-bottom));background:#020e1bf5;border-top:1px solid #1d5976;box-shadow:0 -12px 32px #000a;backdrop-filter:blur(14px)}
+.cinema-bottom-nav[hidden]{display:none!important}
+.cinema-bottom-button{appearance:none;border:0;background:transparent!important;color:#9ab9c9;flex:1;min-width:0;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:6px 3px;font-size:10px;font-weight:650;cursor:pointer;box-shadow:none!important}
+.cinema-bottom-button svg{width:23px;height:23px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cinema-bottom-button.active{color:#2df0ff;text-shadow:0 0 8px #00e0ff70}
+.cinema-bottom-button.active svg{filter:drop-shadow(0 0 7px #00dcff)}
+.cinema-more-menu{position:fixed;bottom:calc(73px + env(safe-area-inset-bottom));right:max(12px,calc((100vw - 600px)/2));z-index:161;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:min(360px,calc(100vw - 24px));padding:14px;background:#061a2bf8;border:1px solid #2183a1;border-radius:18px;box-shadow:0 20px 50px #000c}
+.cinema-more-menu[hidden]{display:none!important}
+.cinema-more-menu button{border:1px solid #245e77;border-radius:11px;padding:12px 5px;background:#0a2940!important;color:#e7fbff!important;font-size:12px}
+.cinema-more-menu button:last-child{grid-column:1/-1}
+body.guest{background:radial-gradient(ellipse at 50% 0,#07507838,transparent 56%),linear-gradient(180deg,#020b17a0,#020c1ae8),url('/icons/mileforge-cinema-landscape-v2.svg') center top/auto 65vh no-repeat,#020b17}
+body.guest main{max-width:690px}
+body.guest .entry-brand .entry-approved-logo{filter:drop-shadow(0 0 24px #00bcea4b);width:min(75vw,340px)}
+body.guest .auth-panel{background:linear-gradient(140deg,#052137ec,#031626f7);border:1px solid #0c83a6;border-radius:26px;box-shadow:0 22px 52px #000b,inset 0 1px #a2faff1b}
+body.guest .auth-switch{background:#031827}
+body.guest #submitAuth{background:linear-gradient(110deg,#00c8ee,#31e6ed);box-shadow:0 6px 25px #00c8f241}
+body.guest .market-teaser{border-radius:22px}
+@media(max-width:700px){
+body:not(.guest)>header{height:61px}
+body:not(.guest)>main{padding:12px 12px 100px}
+#cinemaHero.cinema-hero.compact-hero{min-height:300px;padding:33px 14px 24px;border-radius:20px}
+#cinemaHero .hero-title{font-size:clamp(29px,7vw,39px)}
+#cinemaHero .hero-desc{font-size:13px}
+#homeNav.dashboard-nav{gap:9px}
+#homeNav.dashboard-nav .home-action{min-height:101px}
+body:not(.guest) .daily-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body:not(.guest) .daily-grid .daily-card:last-child{grid-column:1/-1}
+body.guest main{padding:20px 14px 55px}
+}
+@media(max-width:370px){#cinemaHero .hero-title{font-size:27px}.cinema-bottom-button{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.cinema-bottom-nav{backdrop-filter:none}}
