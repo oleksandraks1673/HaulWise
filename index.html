@@ -194,6 +194,12 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
   #cinemaHero .hero-command-label{font-size:8px;letter-spacing:1.05px}
 }
 
+/* Login and registration share one accessible password visibility control. */
+.auth-panel .mf-password-field{position:relative;width:100%}
+.auth-panel .mf-password-field #password{padding-right:86px}
+.auth-panel .mf-password-field .mf-password-toggle{position:absolute;right:9px;top:50%;transform:translateY(-50%);min-width:66px;min-height:41px;padding:8px 10px;border:1px solid #2f6577;border-radius:10px;box-shadow:none;background:#103b4a;color:#e2f8ff;font-size:14px;font-weight:740;line-height:1.2;cursor:pointer}
+.auth-panel .mf-password-field .mf-password-toggle:hover:not(:disabled){transform:translateY(-50%);background:#165365;box-shadow:none}
+.auth-panel .mf-password-field .mf-password-toggle:focus-visible{outline:2px solid #37e5ed;outline-offset:2px}
 </style><link rel="stylesheet" href="/haulwise-tools.css?v=20261023-seven"><link rel="stylesheet" href="/profit-calculator.css?v=20261023"><link rel="stylesheet" href="/mileforge-cinematic-v2.css?v=2"><link rel="stylesheet" href="/mileforge-polish-v3.css?v=1"><link rel="stylesheet" href="/mileforge-growth-v4.css?v=1"><link rel="stylesheet" href="/mileforge-load-invoices-v1.css?v=1"><link rel="stylesheet" href="/mileforge-home-polish-v5.css?v=1">
 <link rel="stylesheet" href="/mileforge-full-rig-v6.css?v=2"><style>.mf-fit{font-size:11px;line-height:1.4;white-space:normal}.mf-fit-blocked{border-color:#a8545c;color:#ffd2d2;background:#472333}.mf-fit-review,.mf-fit-setup{border-color:#ba8943;color:#ffe0a9;background:#473419}.mf-fit-preliminary{border-color:#1e9c9d;color:#b1fff7;background:#073e43}.mf-fit-detail{margin:8px 0!important}.mf-provider-incompatible{opacity:.78}</style><link rel="stylesheet" href="/mileforge-growth-priorities-v7.css?v=1"></head><body class="guest">
 <header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="MileForge original truck logo"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
@@ -215,7 +221,7 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
       <label for="email">Email address</label>
       <input id="email" type="email" placeholder="driver@example.com" autocomplete="email" required>
       <label for="password">Password</label>
-      <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required>
+      <div class="mf-password-field"><input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required><button id="mfPasswordToggle" class="mf-password-toggle" type="button" onclick="togglePasswordVisibility()" aria-controls="password" aria-label="Show password" aria-pressed="false">Show</button></div>
       <button type="submit" id="submitAuth" class="auth-submit">Sign in</button>
     </form>
     <div id="mfSignupBenefits" class="mf-signup-benefits" hidden><strong>Start free — no payment required.</strong> Estimate load profitability, build your truck profile and explore available member-posted jobs. Saved work history and advanced records are part of Pro.</div><p id="mfInviteGreeting" class="mf-invite-greeting" hidden>A driver invited you to try MileForge. Welcome!</p><p id="authMsg" role="status" aria-live="polite"></p>
@@ -330,7 +336,17 @@ const api=supabase.createClient('https://dwtnfrjwnweviunxdams.supabase.co','sb_p
 const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const cad=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(n);
 
 let authMode='signin',queuedSection=null,loadedUserId=null;
+function togglePasswordVisibility(forceHidden=false){
+ const field=$('password'),button=$('mfPasswordToggle');
+ if(!field||!button)return;
+ const visible=!forceHidden&&field.type==='password';
+ field.type=visible?'text':'password';
+ button.textContent=visible?'Hide':'Show';
+ button.setAttribute('aria-label',visible?'Hide password':'Show password');
+ button.setAttribute('aria-pressed',String(visible));
+}
 function setAuthMode(mode){
+ togglePasswordVisibility(true);
  authMode=mode==='signup'?'signup':'signin';
  $('signinTab').classList.toggle('is-selected',authMode==='signin');
  $('signupTab').classList.toggle('is-selected',authMode==='signup');
