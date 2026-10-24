@@ -111,6 +111,10 @@
       } else {
         addText(card,'span','Rate not listed', 'partner-load-rate-pending');
       }
+      const fit = window.MileForgeFit.evaluate(row, typeof equip==='undefined'?null:equip);
+      addText(card,'span',fit.label,'partner-load-source mf-fit mf-fit-'+fit.status);
+      addText(card,'p',fit.reason,'partner-load-footnote');
+      if(fit.status==='blocked') card.classList.add('mf-provider-incompatible');
       const link = safeProviderURL(row.source_url);
       if(link){
         const anchor = document.createElement('a');
