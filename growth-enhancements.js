@@ -52,13 +52,13 @@ function backhaul(id){
  const city=String(trip.destination||'').split(',')[0].trim();
  $g('growthBackhaulText').textContent='Find a return pickup near '+(city||'your delivery destination')+'. Confirm availability and total empty miles independently.';
  const matches=loads.filter(l=>String(l.pickup_city||'').toLowerCase().includes(city.toLowerCase())&&l.posted_by!==user.id&&
- (!equip||(Number(l.cargo_kg)<=Number(equip.cargo_capacity_kg)&&l.trailer_type===equip.trailer_type))).slice(0,8);
+ (window.MileForgeFit.evaluate(l,equip).status!=='blocked')).slice(0,8);
  const list=$g('growthBackhaulMatches');list.replaceChildren();
  if(!matches.length){const note=document.createElement('p');note.textContent='No matching community return loads at this time. Try the official external load boards.';list.append(note);}
  for(const l of matches){
   const item=document.createElement('article');item.className='growth-match';
   const title=document.createElement('strong');title.textContent=l.pickup_city+' → '+l.dropoff_city;
-  const details=document.createElement('p');details.textContent=l.title+' · '+fmt(Number(l.pay_cad))+' offered, before costs.';
+  const details=document.createElement('p');const fit=window.MileForgeFit.evaluate(l,equip);details.textContent=l.title+' · '+fmt(Number(l.pay_cad))+' offered, before costs. · '+fit.label+'. '+fit.reason;
   item.append(title,details);list.append(item);
  }
  panel.scrollIntoView({behavior:'smooth',block:'start'});
