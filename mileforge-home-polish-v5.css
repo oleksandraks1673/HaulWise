@@ -1,0 +1,109 @@
+/* MileForge homepage v5 — refine approved cinematic design; don't replace art or navigation. */
+body:not(.guest)>header{
+  height:84px!important;min-height:84px!important;padding:6px 16px!important;
+  display:flex;align-items:center;justify-content:space-between;
+  overflow:visible;background:#02121f;
+}
+body:not(.guest)>header .mileforge-header-link{
+  display:flex;align-items:center;justify-content:flex-start;
+  height:72px;min-height:72px;max-width:calc(100% - 120px);overflow:visible;
+  flex:0 0 auto;
+}
+body:not(.guest)>header .mileforge-header-logo{
+  display:block;width:107px!important;height:71px!important;max-height:71px!important;
+  aspect-ratio:3/2;object-fit:contain;object-position:center;flex:none;
+}
+body:not(.guest)>header nav{display:flex;align-items:center;min-height:46px}
+body:not(.guest)>header #logoutBtn{min-height:45px;padding:10px 15px;border-radius:13px}
+#cinemaHero.cinema-hero.compact-hero{
+  min-height:286px;padding:26px 18px 24px;margin-bottom:15px;
+  border-radius:20px;box-shadow:0 16px 42px #0008,0 0 24px #00b4d91b,inset 0 1px #b3faff22;
+}
+#cinemaHero .hero-command-label{margin-bottom:8px}
+#cinemaHero .hero-title{font-size:clamp(29px,4.5vw,44px);line-height:1.1;letter-spacing:-1px;margin-bottom:9px}
+#cinemaHero .hero-desc{max-width:440px;font-size:clamp(12px,1.7vw,15px);line-height:1.48}
+#cinemaHero .cinema-hero-cta{
+  margin-top:15px;min-height:46px;padding:11px 20px;border-radius:12px;
+  box-shadow:0 0 21px #00dafa4d,0 7px 24px #0004;
+}
+#homeNav.dashboard-nav{gap:9px;margin-bottom:12px}
+#homeNav.dashboard-nav .home-action{min-height:98px;border-radius:16px}
+#homeNav.dashboard-nav .home-action .nav-icon-frame{width:43px;height:43px}
+#homeNav.dashboard-nav .home-action .action-icon{width:29px;height:29px}
+body:not(.guest) #cinemaBottomNav.cinema-bottom-nav{
+  background:#051523f7;border-top:1px solid #28708a;
+  box-shadow:0 -9px 24px #000b,0 -1px 0 #34dfee24;
+}
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button{
+  color:#b9d3df!important;opacity:1!important;
+  text-shadow:none!important;background:transparent!important;
+  font-size:11px;font-weight:700;min-height:54px;
+}
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button svg{
+  stroke:#aacbdb!important;opacity:1!important;width:24px;height:24px;
+  filter:none!important;
+}
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button span{color:inherit!important;opacity:1!important}
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button.active,
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button[aria-current="page"]{
+  color:#52f3fa!important;
+  background:linear-gradient(180deg,#0c394b6b,#04152120)!important;
+  text-shadow:0 0 9px #12e1f66b!important;
+}
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button.active svg,
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button[aria-current="page"] svg{
+  stroke:#5cffff!important;filter:drop-shadow(0 0 6px #10ddff9c)!important;
+}
+body:not(.guest) #cinemaBottomNav .cinema-bottom-button[aria-expanded="true"]{
+  background:#10425a!important;color:#6af8ff!important;
+}
+#overview .daily-heading:first-child{margin-top:12px}
+#overview .daily-heading:first-child h2{font-size:18px;letter-spacing:-.2px}
+#overview .daily-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:9px;margin:12px 0 17px;
+}
+#overview .daily-grid .daily-card{
+  min-width:0;min-height:103px;padding:13px 12px;
+  border-radius:15px;border-color:#236077;
+  background:linear-gradient(145deg,#0c3448,#051a2b);
+}
+#overview .daily-grid .daily-card .muted{display:block;font-size:12px;line-height:1.35;color:#b2d3de;overflow-wrap:anywhere}
+#overview .daily-grid .daily-card strong{
+  display:block;font-size:clamp(18px,2.7vw,26px);line-height:1.18;
+  font-variant-numeric:tabular-nums;overflow-wrap:anywhere;
+  margin:8px 0 5px;color:#f1fbff;
+}
+#overview .daily-grid .daily-card:last-child{grid-column:auto!important}
+#overview .daily-grid .daily-card small{color:#a9c5d0;font-size:10px;line-height:1.4}
+#overview .daily-grid .mf-balance strong{color:#67f1e1}
+#overview .daily-grid .mf-balance.is-unavailable strong{color:#d7e3e9}
+#overview .daily-heading + .daily-grid{margin-top:10px}
+#overview .work-note{line-height:1.55}
+@media(max-width:700px){
+  body:not(.guest)>header{height:82px!important;min-height:82px!important;padding:6px 14px!important}
+  body:not(.guest)>header .mileforge-header-link{height:70px;min-height:70px}
+  body:not(.guest)>header .mileforge-header-logo{width:103px!important;height:69px!important;max-height:69px!important}
+  #cinemaHero.cinema-hero.compact-hero{min-height:255px;padding:22px 13px 22px;margin-bottom:13px}
+  #cinemaHero .hero-title{font-size:clamp(27px,6.8vw,33px);line-height:1.11;margin-bottom:8px}
+  #cinemaHero .hero-command-label{font-size:9px;margin-bottom:8px;letter-spacing:1.25px}
+  #cinemaHero .hero-desc{font-size:12px;line-height:1.45}
+  #cinemaHero .cinema-hero-cta{margin-top:14px;min-height:44px;padding:10px 17px}
+  #homeNav.dashboard-nav{gap:9px;margin-bottom:11px}
+  #homeNav.dashboard-nav .home-action{min-height:95px;padding:8px 4px}
+  #homeNav.dashboard-nav .home-action .nav-icon-frame{width:41px;height:41px}
+  #homeNav.dashboard-nav .home-action .action-icon{width:28px;height:28px}
+  #overview .daily-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #overview .daily-grid .daily-card{min-height:94px;padding:12px 11px}
+  #overview .daily-grid .daily-card strong{font-size:clamp(19px,5vw,24px)}
+  body:not(.guest) #cinemaBottomNav .cinema-bottom-button{font-size:11px}
+}
+@media(max-width:370px){
+  #cinemaHero .hero-title{font-size:26px}
+  #cinemaHero.cinema-hero.compact-hero{padding-inline:10px}
+  #homeNav.dashboard-nav .home-action .nav-action-label{font-size:11px}
+  body:not(.guest) #cinemaBottomNav .cinema-bottom-button{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ #homeNav .home-action,#cinemaHero .cinema-hero-cta{transition:none!important}
+}
