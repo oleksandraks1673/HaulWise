@@ -1,0 +1,40 @@
+/* Reference-matched MileForge cinematic layout */
+body:not(.guest)>header{justify-content:center;position:relative;background:#020d1a;min-height:72px}
+body:not(.guest)>header .mileforge-header-link{margin:auto;max-width:220px;justify-content:center}
+body:not(.guest)>header .mileforge-header-logo{width:132px;max-height:66px}
+body:not(.guest)>header nav{position:absolute;right:13px;top:50%;transform:translateY(-50%)}
+body:not(.guest)>header nav button{padding:9px 10px;font-size:11px}
+.cinema-header-menu{display:none}
+body:not(.guest) .cinema-header-menu{display:grid;place-items:center;position:absolute;left:12px;top:50%;transform:translateY(-50%);background:transparent!important;color:#defaff!important;border:0!important;padding:8px;box-shadow:none!important}
+#cinemaHero.cinema-hero.compact-hero{display:flex;flex-direction:column;min-height:390px;padding:0 14px 30px;margin-bottom:15px;gap:0;background:#051425;border:0;border-radius:20px;box-shadow:inset 0 1px #ffffff12,0 10px 30px #0008}
+#cinemaHero.cinema-hero.compact-hero::before{background:linear-gradient(180deg,#020b19 0%,#061222 100%)}
+#cinemaHero .cinema-photo-truck{position:relative;flex:none;width:min(100%,520px);height:182px;margin:0 auto -4px;overflow:hidden}
+#cinemaHero .cinema-photo-truck-art{position:absolute;inset:-5px 0 0;background:radial-gradient(ellipse at 50% 95%,#00b6e52c,transparent 72%),url('/icons/mileforge-original-restored-v14.svg') center center/auto 190px no-repeat}
+#cinemaHero .hero-content{position:relative;z-index:1}
+#cinemaHero .hero-command-label{margin:0 0 9px;letter-spacing:1.4px}
+#cinemaHero .hero-title{font-size:clamp(30px,5vw,41px);letter-spacing:-1.1px;margin-bottom:10px}
+#cinemaHero .hero-desc{max-width:360px;font-size:13px;line-height:1.65}
+#cinemaHero .cinema-hero-cta{font-size:13px;margin-top:17px;min-height:45px;padding:12px 21px;background:linear-gradient(90deg,#04c9fa,#05edff);box-shadow:0 0 18px #00cafa7b}
+#homeNav.dashboard-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 20px}
+#homeNav.dashboard-nav .home-action{min-height:108px;gap:7px;padding:10px 4px;border:1px solid #086387;border-radius:15px;background:linear-gradient(165deg,#062942,#031526 80%)}
+#homeNav.dashboard-nav .home-action .nav-icon-frame{background:transparent;border:0;box-shadow:none;width:44px;height:44px}
+#homeNav.dashboard-nav .home-action .action-icon{width:32px;height:32px}
+#homeNav.dashboard-nav .home-action .nav-action-label{font-size:12px}
+#appWorkspace .cinema-recent-block{border:1px solid #135472;background:#031627;border-radius:18px;padding:15px;margin:0 0 18px}
+#appWorkspace .cinema-recent-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px;gap:10px}
+#appWorkspace .cinema-recent-head h2{font-size:17px;margin:0}
+#appWorkspace .cinema-recent-head button{color:#19e7fa!important;background:none!important;border:0!important;box-shadow:none!important;padding:5px 0!important;font-size:12px}
+#appWorkspace .cinema-recent-list{display:grid;gap:8px}
+#appWorkspace .cinema-recent-card{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;text-align:left;background:#061e32!important;border:1px solid #174868!important;border-radius:12px;padding:13px!important;color:#fff!important;box-shadow:none!important;min-width:0}
+#appWorkspace .cinema-recent-route{display:grid;gap:4px;min-width:0}
+#appWorkspace .cinema-recent-route strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}
+#appWorkspace .cinema-recent-route small{font-size:11px;color:#a1c5d4}
+#appWorkspace .cinema-recent-revenue{color:#59edbd;font-weight:800;font-size:13px}
+body:not(.guest) #appWorkspace #overview .daily-heading h2{font-size:18px}
+body.guest .entry-brand{padding-top:8px}
+body.guest .entry-brand .entry-approved-logo{width:min(89vw,410px);margin-bottom:3px}
+body.guest .auth-panel{padding:27px 22px}
+body.guest .auth-panel input{min-height:51px}
+body.guest .auth-panel button.auth-submit{min-height:52px}
+body:not(.guest) #appWorkspace > section:not(#cinemaHero):not(.hidden) .panel{background:#04192b}
+@media(max-width:600px){body:not(.guest)>header{height:64px}#cinemaHero.cinema-hero.compact-hero{min-height:365px;padding:0 11px 24px}#cinemaHero .cinema-photo-truck{height:165px}#cinemaHero .cinema-photo-truck-art{background-size:auto 170px}#cinemaHero .hero-title{font-size:clamp(26px,7vw,33px)}#cinemaHero .hero-desc{font-size:12px}#homeNav.dashboard-nav{gap:8px}#homeNav.dashboard-nav .home-action{min-height:99px;padding:8px 3px}#homeNav.dashboard-nav .home-action .nav-action-label{font-size:11px}#homeNav.dashboard-nav .home-action .nav-icon-frame{width:38px;height:38px}#homeNav.dashboard-nav .home-action .action-icon{width:29px;height:29px}}
