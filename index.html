@@ -194,8 +194,28 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
   #cinemaHero .hero-command-label{font-size:8px;letter-spacing:1.05px}
 }
 
+
+/* MileForge professional header lockup; preserve approved logo asset and sign-up artwork. */
+header .mf-premium-lockup{display:inline-flex!important;align-items:center!important;gap:11px!important;line-height:1!important;overflow:visible!important;max-width:calc(100% - 112px)!important;min-width:0;flex-shrink:1;text-decoration:none;white-space:nowrap}
+header .mf-header-emblem{display:block;position:relative;width:65px;height:60px;flex:0 0 65px;overflow:hidden;border-radius:9px;background:transparent;isolation:isolate}
+header .mf-header-emblem .mileforge-header-logo{display:block!important;position:absolute!important;left:-6px!important;top:-5px!important;width:86px!important;min-width:86px!important;height:66px!important;max-height:none!important;aspect-ratio:auto!important;object-fit:fill!important;object-position:center!important;filter:none!important}
+header .mf-header-wordmark{display:inline-block;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:clamp(25px,3vw,35px);font-weight:900;letter-spacing:-1.6px;font-style:italic;line-height:1.12;color:#e8f3fa;text-shadow:0 1px 8px #072c3d90}
+header .mf-header-wordmark span{color:#16e9ee;text-shadow:0 0 13px #06d0ef45}
+header .mf-premium-lockup:focus-visible{outline:2px solid #23e5f0;outline-offset:5px;border-radius:6px}
+@media(max-width:730px){
+ header .mf-premium-lockup{gap:8px!important;max-width:calc(100% - 112px)!important}
+ header .mf-header-emblem{width:58px;height:55px;flex-basis:58px}
+ header .mf-header-emblem .mileforge-header-logo{width:79px!important;min-width:79px!important;height:60px!important;left:-6px!important;top:-4px!important}
+ header .mf-header-wordmark{font-size:clamp(22px,5.2vw,29px);letter-spacing:-1.3px}
+}
+@media(max-width:390px){
+ header .mf-premium-lockup{gap:6px!important}
+ header .mf-header-emblem{width:50px;height:50px;flex-basis:50px}
+ header .mf-header-emblem .mileforge-header-logo{width:69px!important;min-width:69px!important;height:54px!important;left:-5px!important;top:-4px!important}
+ header .mf-header-wordmark{font-size:22px;letter-spacing:-1.2px}
+}
 </style><link rel="stylesheet" href="/haulwise-tools.css?v=20261023-seven"><link rel="stylesheet" href="/profit-calculator.css?v=20261023"><link rel="stylesheet" href="/mileforge-cinematic-v2.css?v=2"><link rel="stylesheet" href="/mileforge-polish-v3.css?v=1"><link rel="stylesheet" href="/mileforge-growth-v4.css?v=1"><link rel="stylesheet" href="/mileforge-load-invoices-v1.css?v=1"><link rel="stylesheet" href="/mileforge-home-polish-v5.css?v=1"><style>.mf-fit{font-size:11px;line-height:1.4;white-space:normal}.mf-fit-blocked{border-color:#a8545c;color:#ffd2d2;background:#472333}.mf-fit-review,.mf-fit-setup{border-color:#ba8943;color:#ffe0a9;background:#473419}.mf-fit-preliminary{border-color:#1e9c9d;color:#b1fff7;background:#073e43}.mf-fit-detail{margin:8px 0!important}.mf-provider-incompatible{opacity:.78}</style></head><body class="guest">
-<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="MileForge original truck logo"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
+<header><a class="brand-wrap mileforge-header-link mf-premium-lockup" href="/" aria-label="MileForge home"><span class="mf-header-emblem"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="" aria-hidden="true"></span><span class="mf-header-wordmark">Mile<span>Forge</span></span></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
 <main>
 
 <div id="guestPortal" class="guest-portal">
