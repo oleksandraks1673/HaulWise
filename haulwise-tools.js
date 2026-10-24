@@ -14,7 +14,7 @@ async function loadWork(){
  if(!user)return;const uid=user.id,epoch=++workEpoch;workError='';
  const [a,b]=await Promise.all([api.from('trips').select('*').eq('user_id',uid).order('pickup_date',{ascending:false,nullsFirst:false}).limit(1000),api.from('expenses').select('*').eq('user_id',uid).order('expense_date',{ascending:false}).limit(5000)]);
  if(user?.id!==uid||epoch!==workEpoch)return;
- if(a.error||b.error){workError=workErrorText(a.error||b.error);workLoadedUser=null;}else{workTrips=a.data||[];workExpenses=b.data||[];workLoadedUser=uid;}
+ if(a.error||b.error){workError=workErrorText(a.error||b.error);workLoadedUser=null;workTrips=[];workExpenses=[];}else{workTrips=a.data||[];workExpenses=b.data||[];workLoadedUser=uid;}
  renderWork();renderExpenses();renderWorkReport();
 }
 function resetWork(){++workEpoch;workTrips=[];workExpenses=[];workLoadedUser=null;workError='';workBusy=false;for(const id of ['tripEditor','expenseEditor']){const form=$(id);if(form){form.reset();form.hidden=true;}}renderWork();renderExpenses();renderWorkReport();}
@@ -46,7 +46,7 @@ async function saveWorkTrip(event){
  workBusy=true;f.querySelector('[type=submit]').disabled=true;$('tripSaveMsg').textContent='Saving load…';
  try{let q=id?api.from('trips').update(item).eq('id',id).eq('user_id',uid):api.from('trips').insert(item);const {data:saved,error}=await q.select('id').single();if(error||!saved)throw error||new Error('Load was not saved.');if(user?.id!==uid)return;f.hidden=true;await loadWork();$('workMsg').textContent='Load saved to your account.';}catch(e){if(user?.id===uid)$('tripSaveMsg').textContent=workErrorText(e);}finally{workBusy=false;f.querySelector('[type=submit]').disabled=false;}
 }
-async function updateWorkStatus(id,status){if(!user||!workStatuses[status])return;const uid=user.id;const {data,error}=await api.from('trips').update({status,payment_received_at:status==='paid'?new Date().toISOString():(workTrips.find(t=>t.id===id)?.payment_received_at||null),updated_at:new Date().toISOString()}).eq('id',id).eq('user_id',uid).select('id').single();if(user?.id!==uid)return;if(error||!data){$('workMsg').textContent=workErrorText(error);renderWork();return;}await loadWork();$('workMsg').textContent='Load status updated.';}
+async function updateWorkStatus(id,status){if(!user||!workStatuses[status])return;const uid=user.id;const prior=workTrips.find(t=>t.id===id);if(!prior)return;if(prior.status==='paid'&&status!=='paid'){const ok=window.confirm('This load was marked paid. Changing its status will not remove recorded invoice payments. Continue?');if(!ok){renderWork();return;}}const {data,error}=await api.from('trips').update({status,payment_received_at:status==='paid'?new Date().toISOString():(workTrips.find(t=>t.id===id)?.payment_received_at||null),updated_at:new Date().toISOString()}).eq('id',id).eq('user_id',uid).select('id').single();if(user?.id!==uid)return;if(error||!data){$('workMsg').textContent=workErrorText(error);renderWork();return;}await loadWork();$('workMsg').textContent='Load status updated.';}
 function showExpenseEditor(tripId,id){
  if(!user){showAuth();return;}const f=$('expenseEditor');f.reset();f.elements.id.value=id||'';const e=id?workExpenses.find(e=>e.id===id):null;
  f.elements.trip_id.innerHTML='<option value="">General business expense</option>'+workTrips.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.load_reference||'Untitled load')+'</option>').join('');
