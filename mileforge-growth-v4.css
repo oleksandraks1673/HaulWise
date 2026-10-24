@@ -13,3 +13,7 @@
 .mf-share-controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.mf-share-controls button{min-height:44px}
 .mf-invite-disclosure{font-size:12px;color:#b4ced8;margin-top:12px}
 @media(max-width:600px){.mf-quickstart-steps{grid-template-columns:1fr}.mf-quickstart-step{min-height:67px}.mf-quickstart-heading{align-items:center}.mf-quickstart h2{font-size:16px}}
+
+/* Home dashboard: avoid a second row of shortcuts that repeat the fixed navigation.
+   Expenses stays in the bottom bar; Reports and My Plan stay in More. */
+body:not(.guest) #appWorkspace .work-toolbar{display:none!important}
