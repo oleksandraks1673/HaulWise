@@ -38,3 +38,9 @@ body.guest .auth-panel input{min-height:51px}
 body.guest .auth-panel button.auth-submit{min-height:52px}
 body:not(.guest) #appWorkspace > section:not(#cinemaHero):not(.hidden) .panel{background:#04192b}
 @media(max-width:600px){body:not(.guest)>header{height:64px}#cinemaHero.cinema-hero.compact-hero{min-height:365px;padding:0 11px 24px}#cinemaHero .cinema-photo-truck{height:165px}#cinemaHero .cinema-photo-truck-art{background-size:auto 170px}#cinemaHero .hero-title{font-size:clamp(26px,7vw,33px)}#cinemaHero .hero-desc{font-size:12px}#homeNav.dashboard-nav{gap:8px}#homeNav.dashboard-nav .home-action{min-height:99px;padding:8px 3px}#homeNav.dashboard-nav .home-action .nav-action-label{font-size:11px}#homeNav.dashboard-nav .home-action .nav-icon-frame{width:38px;height:38px}#homeNav.dashboard-nav .home-action .action-icon{width:29px;height:29px}}
+
+/* The reference uses truck photography above the headline, not a second wordmark. */
+#cinemaHero .cinema-photo-truck-art{background-size:auto 252px;background-position:center -14px}
+@media(max-width:600px){#cinemaHero .cinema-photo-truck-art{background-size:auto 236px;background-position:center -10px}}
+/* Secondary shortcuts remain available in More rather than duplicating primary tiles. */
+body:not(.guest):has(#cinemaHero:not(.hidden)) #appWorkspace>.work-toolbar{display:none}
