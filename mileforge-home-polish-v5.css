@@ -158,3 +158,22 @@ body:not(.guest) #cinemaBottomNav .cinema-bottom-button[aria-expanded="true"]{
  #cinemaHero.cinema-hero.compact-hero{min-height:420px}
  #cinemaHero .cinema-hero-cta{margin-top:135px}
 }
+
+/* Mobile correction: fit the complete truck image instead of cropping half its width. */
+@media(max-width:650px){
+ #cinemaHero.cinema-hero.compact-hero{
+   min-height:415px;
+   background:#031322;
+ }
+ #cinemaHero.cinema-hero.compact-hero::before{
+   background-image:linear-gradient(180deg,#031322 0%,#031322d9 19%,#03132230 41%,#03132212 68%,#031322d6 100%),url('/icons/mileforge-photoreal-truck-hero-v1.svg');
+   background-size:100% 100%,100% auto;
+   background-position:center center,center 57%;
+   background-repeat:no-repeat;
+ }
+ #cinemaHero .cinema-hero-cta{margin-top:210px}
+}
+@media(max-width:370px){
+ #cinemaHero.cinema-hero.compact-hero{min-height:405px}
+ #cinemaHero .cinema-hero-cta{margin-top:185px}
+}
