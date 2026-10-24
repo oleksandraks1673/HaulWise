@@ -1,0 +1,19 @@
+/* Full tractor-trailer: image is content, never a cropped cover background. */
+#cinemaHero.cinema-hero.compact-hero{height:auto!important;min-height:0!important;padding:24px 16px 26px!important;display:block!important;background:linear-gradient(150deg,#041a2c,#02101c)!important}
+#cinemaHero.cinema-hero.compact-hero::before{content:none!important;background:none!important}
+#cinemaHero .hero-content{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;text-align:center!important;width:100%!important;max-width:100%!important;gap:0!important;position:relative!important;z-index:2!important}
+#cinemaHero .hero-title,#cinemaHero .hero-desc{width:100%!important;max-width:100%!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+#cinemaHero .hero-command-label{justify-content:center!important}
+#cinemaHero .mf-full-truck-image{display:block;position:relative;width:100%;max-width:780px;margin:16px auto 8px;overflow:hidden;border-radius:13px;background:linear-gradient(140deg,#091b2c,#10364d);box-shadow:0 9px 25px #0005}
+#cinemaHero .mf-full-truck-image img{display:block;width:100%;height:auto;max-height:none!important;object-fit:contain!important;object-position:center!important}
+#cinemaHero .cinema-hero-cta{margin:13px auto 0!important;position:relative!important;z-index:2!important;max-width:100%}
+@media(min-width:850px){
+#cinemaHero.cinema-hero.compact-hero{padding:30px 26px!important}
+#cinemaHero .hero-content{display:grid!important;grid-template-columns:42% 58%;grid-template-rows:auto auto auto auto;align-items:center!important;justify-items:start!important}
+#cinemaHero .hero-command-label{grid-column:1;grid-row:1;justify-self:start}
+#cinemaHero .hero-title{grid-column:1;grid-row:2;text-align:left!important}
+#cinemaHero .hero-desc{grid-column:1;grid-row:3;text-align:left!important}
+#cinemaHero .mf-full-truck-image{grid-column:2;grid-row:1 / 5;align-self:center;margin:0;max-width:100%}
+#cinemaHero .cinema-hero-cta{grid-column:1;grid-row:4;margin:18px 0 0!important}
+}
+@media(max-width:380px){#cinemaHero.cinema-hero.compact-hero{padding:18px 10px 22px!important}#cinemaHero .mf-full-truck-image{margin-top:12px}#cinemaHero .hero-title{font-size:27px!important}}
