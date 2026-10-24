@@ -129,3 +129,24 @@
 .growth-match p{font-size:12px;color:#accfdb}
 .growth-invite button{min-height:44px}
 @media(max-width:700px){.growth-extra-grid{grid-template-columns:1fr}.growth-extra-grid label{grid-row:auto}.growth-extra-grid p{grid-column:1}.growth-document-row{flex-wrap:wrap}.growth-document-row button{flex:1}}
+
+
+/* MileForge premium navigation: freight-specific vector pictograms */
+#homeNav.dashboard-nav .home-action{position:relative;isolation:isolate;overflow:hidden;gap:8px;background:linear-gradient(155deg,#123e52 0%,#09283c 50%,#061b2d 100%);border:1px solid rgba(71,173,194,.5);box-shadow:inset 0 1px 0 #a6faff23,0 9px 24px #0005;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+#homeNav.dashboard-nav .home-action::before{content:"";position:absolute;inset:0 0 auto;height:42%;background:linear-gradient(180deg,#8ceffd12,transparent);pointer-events:none}
+#homeNav.dashboard-nav .home-action .nav-icon-frame{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:radial-gradient(circle at 42% 26%,#27e8f12b,#00a4be0b 65%,#04233516);border:1px solid #49dce348;box-shadow:inset 0 1px 0 #bcfaff26,0 4px 16px #00dcf51c;flex-shrink:0}
+#homeNav.dashboard-nav .home-action .action-icon{width:32px;height:32px;stroke:#5ef8fa!important;color:#5ef8fa!important;filter:drop-shadow(0 0 5px #16ddef67);stroke-width:1.8}
+#homeNav.dashboard-nav .home-action .nav-fill{fill:#12cbe21b;stroke:#7afaff}
+#homeNav.dashboard-nav .home-action .nav-detail{stroke:#b7f9ff;stroke-width:1.2;opacity:.72}
+#homeNav.dashboard-nav .home-action .nav-action-label{font-size:13px;font-weight:780;letter-spacing:.1px;line-height:1.24;text-wrap:balance;position:relative}
+#homeNav.dashboard-nav .home-action:hover{transform:translateY(-2px);border-color:#41eaf4;box-shadow:inset 0 1px 0 #bdfaff45,0 11px 26px #0007,0 0 19px #00d5e42c}
+#homeNav.dashboard-nav .home-action.active{border-color:#4efaf4;box-shadow:inset 0 0 17px #12d9ed24,0 0 0 1px #42e9f444,0 0 20px #00d5e42f}
+.work-toolbar[aria-label="Additional business tools"] button{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(155deg,#102f43,#061b2b);border:1px solid #2f7082;border-radius:13px;color:#e0faff;box-shadow:inset 0 1px #bdfaff18,0 6px 18px #0004}
+.work-toolbar[aria-label="Additional business tools"] button .nav-mini-icon{display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;color:#5beef4}
+.work-toolbar[aria-label="Additional business tools"] button .nav-mini-svg{width:24px;height:24px;stroke-width:1.8;filter:drop-shadow(0 0 4px #20d9e855)}
+.work-toolbar[aria-label="Additional business tools"] button .nav-fill{fill:#1bd8e51c}
+.work-toolbar[aria-label="Additional business tools"] button .nav-detail{opacity:.7}
+.work-toolbar[aria-label="Additional business tools"] button.active{border-color:#40e8ed;background:linear-gradient(145deg,#145168,#082a3c)}
+@media(max-width:730px){#homeNav.dashboard-nav .home-action{min-height:104px;padding:10px 4px;gap:8px}#homeNav.dashboard-nav .home-action .nav-icon-frame{width:45px;height:45px;border-radius:13px}#homeNav.dashboard-nav .home-action .action-icon{width:29px;height:29px}#homeNav.dashboard-nav .home-action .nav-action-label{font-size:12px}.work-toolbar[aria-label="Additional business tools"] button{gap:5px;padding:9px 4px;flex-direction:column;font-size:11px;min-height:66px}}
+@media(max-width:390px){#homeNav.dashboard-nav .home-action .nav-action-label{font-size:11px}#homeNav.dashboard-nav .home-action .nav-icon-frame{width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){#homeNav.dashboard-nav .home-action{transition:none}#homeNav.dashboard-nav .home-action:hover{transform:none}}
