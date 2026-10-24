@@ -1,0 +1,24 @@
+/* MileForge My Loads refresh v8 - presentation only; no data or navigation changes */
+#log{scroll-margin-top:145px;padding-top:32px!important}
+#log>.row:first-child{align-items:flex-start;gap:13px;margin-bottom:14px}
+#log #logTitle{font-size:clamp(27px,5.8vw,34px);line-height:1.16;letter-spacing:-.035em;margin:0 0 7px;color:#f2fbff}
+#log>.row:first-child p{margin:0;color:#a6c5d2;font-size:14px;line-height:1.4}
+#log>.row:first-child button{flex-shrink:0;min-height:46px;border-radius:13px;padding:11px 18px;box-shadow:0 5px 16px rgba(0,203,229,.15);font-size:14px}
+#log #growthOnboarding{padding:18px 18px 10px!important;border:1px solid rgba(77,165,194,.30)!important;border-radius:19px!important;background:linear-gradient(145deg,#0b2c3f,#061d2d)!important;box-shadow:none!important;display:grid;grid-template-columns:1fr;gap:0;margin:16px 0 18px!important}
+#log #growthOnboarding>p{font-size:15px;line-height:1.45;font-weight:800;color:#e7fbfc;margin:0 0 8px}
+#log .mf-setup-progress{height:5px;background:#1b4556;border-radius:99px;overflow:hidden;margin:1px 0 13px;position:relative}
+#log .mf-setup-progress>span{display:block;height:100%;background:linear-gradient(90deg,#04badc,#5cebd4);border-radius:99px;transition:width .25s ease}
+#log #growthOnboarding button.growth-check{display:flex!important;justify-content:flex-start!important;align-items:center!important;width:100%!important;min-height:42px!important;max-width:100%!important;background:#09283b!important;border:1px solid #28536a!important;border-radius:10px!important;color:#d9edf6!important;font-size:13px!important;font-weight:650!important;line-height:1.35!important;margin:0 0 7px!important;padding:11px 13px!important;box-shadow:none!important;text-shadow:none!important;text-align:left!important;white-space:normal!important}
+#log #growthOnboarding button.growth-check.is-done{color:#b9fae9!important;border-color:#278679!important}
+#log #growthOnboarding button.growth-check:hover,#log #growthOnboarding button.growth-check:focus-visible{background:#0c3b50!important;border-color:#38cde1!important}
+#log #tripSummary .work-summary{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important;margin:15px 0 12px!important}
+#log #tripSummary .work-summary article{min-width:0;min-height:100px;background:#0b2b3c!important;border:1px solid #28566a!important;border-radius:16px!important;padding:15px!important;box-shadow:none!important}
+#log #tripSummary .work-summary article:last-child{grid-column:1/-1;min-height:98px;background:linear-gradient(100deg,#0a3440,#082a39)!important}
+#log #tripSummary .work-summary .muted{font-size:13px!important;color:#a5c4d1!important}
+#log #tripSummary .work-summary strong{font-size:clamp(22px,5.8vw,28px)!important;font-variant-numeric:tabular-nums;line-height:1.25;margin-top:9px;color:#5ce4c8}
+#log>.work-note.mf-short-note{font-size:12px!important;line-height:1.5!important;color:#9cbbc8!important;margin:8px 0 22px!important}
+#log .mf-recent-heading{font-size:20px;line-height:1.2;letter-spacing:-.025em;color:#f2fdff;font-weight:800;margin:24px 0 12px}
+#log .work-filter{margin-top:0}
+#log #tripList .work-card{box-shadow:none;border-color:#28566a}
+@media(min-width:760px){#log #tripSummary .work-summary{grid-template-columns:repeat(3,minmax(0,1fr))!important}#log #tripSummary .work-summary article:last-child{grid-column:auto}}
+@media(max-width:530px){#log{padding-top:39px!important}#log>.row:first-child{align-items:flex-start;flex-direction:column;gap:12px}#log>.row:first-child button{width:auto;min-width:140px}#log #growthOnboarding{padding:16px 14px 9px!important}#log #tripSummary .work-summary article{padding:14px!important}}
