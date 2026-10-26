@@ -55,16 +55,16 @@ function init(){
  }
  const form=$('tripEditor');
  if(form){
-   const reference=$('workReference');if(reference){reference.required=false;reference.placeholder='Optional · e.g. Load #4408';const label=form.querySelector('label[for="workReference"]');if(label)label.textContent='Load number or reference (optional)';}
-   const pickup=$('workPickup');if(pickup){pickup.required=false;const label=form.querySelector('label[for="workPickup"]');if(label)label.textContent='Pickup date (optional)';}
-   const distance=$('workDistance');if(distance){distance.required=false;const label=form.querySelector('label[for="workDistance"]');if(label)label.textContent='Distance in km (optional)';}
-   const optionalStart=$('workStatus')?.closest('.grid');
+   const reference=$('workReference');if(reference){reference.placeholder='e.g. Load #4408';const label=form.querySelector('label[for="workReference"]');if(label)label.textContent='Load number or reference';}
+   const pickup=$('workPickup');if(pickup){const label=form.querySelector('label[for="workPickup"]');if(label)label.textContent='Pickup date';}
+   const distance=$('workDistance');if(distance){const label=form.querySelector('label[for="workDistance"]');if(label)label.textContent='Distance (km)';}
+   const optionalStart=$('workStatus')?.parentElement;
    const pod=$('workPOD')?.closest('.grid');
    const notes=$('workNotes');const notesLabel=form.querySelector('label[for="workNotes"]');
    if(optionalStart){
      const extra=document.createElement('details');extra.className='mf-simple-extra';
      const sum=document.createElement('summary');sum.textContent='More details (optional)';
-     optionalStart.parentNode.insertBefore(extra,optionalStart);extra.append(sum,optionalStart);
+     optionalStart.parentNode.insertAdjacentElement('afterend',extra);extra.append(sum,optionalStart);
      if(pod)extra.append(pod);
      if(notesLabel)extra.append(notesLabel);
      if(notes)extra.append(notes);
