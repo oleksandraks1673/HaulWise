@@ -176,7 +176,7 @@
   const previousTab = tab;
   tab = function(name,...args){
     const result = previousTab(name,...args);
-    if(name === 'find' && user?.id){
+    if(name === 'find' && user?.id && !el('haulwiseExternalPanel')?.hidden){
       void readProviderState(false);
     }
     return result;
