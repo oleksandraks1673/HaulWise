@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mileforge.ca/sitemap.xml
