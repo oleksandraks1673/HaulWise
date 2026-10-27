@@ -25,7 +25,7 @@ $('mfMatchSearch').onclick=()=>{if(typeof haulwiseShowLoadSource==='function')ha
 $('mfMatchClear').onclick=()=>{$('mfMatchPickup').value='';$('mfMatchDestination').value='';$('mfMatchResults').textContent='';};
 box.addEventListener('click',e=>{const btn=e.target.closest('[data-mf-match-id]');if(btn&&typeof marketplaceToCalculator==='function')marketplaceToCalculator(btn.dataset.mfMatchId);});
 const ship=document.createElement('section');ship.id='mfShipperMatch';ship.innerHTML='<h2>SmartMatch · Equipment requirements</h2><p class="muted">Enter equipment type, cargo weight and dimensions when posting. MileForge uses these details to show your load to compatible drivers searching Community listings. Driver availability and route matching are not verified yet.</p>';
-post.querySelector('form')?.insertAdjacentElement('beforebegin',ship);
+post.querySelector('form')?.insertAdjacentElement('afterend',ship);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
