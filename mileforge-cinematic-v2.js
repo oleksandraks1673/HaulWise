@@ -3,7 +3,7 @@
 const el=(id)=>document.getElementById(id);
 const bottom=el('cinemaBottomNav'),menu=el('cinemaMoreMenu');
 if(!bottom||!menu)return;
-const known=new Set(['overview','log','find','profit','equipment','post','mine','expenses','reports','plans']);
+const known=new Set(['overview','log','find','profit','equipment','post','mine','expenses','reports','plans','admin']);
 function sync(){
  const signed=!!document.querySelector('body:not(.guest)');
  bottom.hidden=!signed;if(!signed){menu.hidden=true;return}
@@ -13,7 +13,7 @@ function sync(){
   const selected=b.dataset.cinemaTab===current;b.classList.toggle('active',selected);if(selected)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
  }
 }
-function go(id){if(!known.has(id))return;menu.hidden=true;if(typeof tab==='function')tab(id);sync();}
+function go(id){if(!known.has(id))return;if(id==='admin'&&!(typeof user!=='undefined'&&user?.app_metadata?.mileforge_admin))return;menu.hidden=true;if(typeof tab==='function')tab(id);sync();}
 bottom.addEventListener('click',ev=>{const b=ev.target.closest('[data-cinema-tab]');if(!b)return;const id=b.dataset.cinemaTab;if(id==='more'){menu.hidden=!menu.hidden;return}go(id)});
 menu.addEventListener('click',ev=>{const b=ev.target.closest('[data-cinema-target]');if(b)go(b.dataset.cinemaTarget)});
 document.addEventListener('click',ev=>{if(!bottom.contains(ev.target)&&!menu.contains(ev.target))menu.hidden=true});
