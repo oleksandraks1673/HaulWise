@@ -446,6 +446,7 @@ async function authenticate(){
    const {data,error}=signup?await api.auth.signUp({email,password,options:{emailRedirectTo:'https://mileforge.ca/',data:{account_type:selectedAudience||'carrier'}}}):await api.auth.signInWithPassword({email,password});
    if(error){$('authMsg').textContent=error.message;return}
    if(signup&&!data.session){$('authMsg').textContent='Account created. If confirmation is required, check your inbox; otherwise sign in.';return}
+   if(signup && data.session && data.user){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'mileforge_signup_completed',signup_method:'email'});}
    $('authMsg').textContent='Signed in successfully.';
    await refreshAuth();
  }catch(err){$('authMsg').textContent='Unable to sign in right now. Please try again.'}
