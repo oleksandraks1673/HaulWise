@@ -212,8 +212,21 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
 .mf-audience-card em{font-size:13px;font-style:normal;color:#6ceaff;margin-top:auto}
 .mf-audience-card.chosen{border-color:#0ef0e6;box-shadow:0 0 0 2px #0ef0e638}
 @media(max-width:480px){.mf-audience-grid{grid-template-columns:1fr}.mf-audience-card{min-height:115px;padding:15px}}
+.mf-audience{max-width:604px;margin:8px auto 12px}
+.mf-audience h2{font-size:17px;margin:0 0 10px}
+.mf-audience-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.mf-audience-card{min-height:108px;padding:13px 14px;gap:5px;border-radius:13px;box-shadow:none}
+.mf-audience-card strong{font-size:16px}.mf-audience-card span{font-size:12px;line-height:1.3}
+.mf-audience-card em{font-size:12px}
+.mf-auth-collapsed{display:none!important}
+.auth-panel{padding:22px!important;margin-top:12px!important}
+.auth-switch{margin-bottom:16px!important}
+#signupTab{display:none!important}
+.auth-switch{grid-template-columns:1fr!important}
+.auth-panel>p{margin-bottom:12px!important}
+@media(max-width:480px){.mf-audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mf-audience-card{min-height:124px;padding:12px 10px}.mf-audience-card strong{font-size:15px}.mf-audience-card span{font-size:11px}.mf-audience-card em{font-size:11px}.auth-panel{padding:17px!important}}
 </style></head><body class="guest">
-<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="MileForge original truck logo"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
+<header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="MileForge original truck logo"></a><nav><button id="authBtn" class="secondary" onclick="openSignIn()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
 <main>
 
 <div id="guestPortal" class="guest-portal">
@@ -222,14 +235,14 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
     <p>Load management. Clear costs. Smarter decisions.</p><p class="public-calc-link"><a href="/calculator.html" style="color:#5deaf4;font-weight:750;text-decoration:underline;text-underline-offset:4px">Try the free load calculator →</a></p>
   </div>
   <section class="mf-audience" aria-label="Choose how you use MileForge"><h2>How will you use MileForge?</h2><div class="mf-audience-grid"><button type="button" id="mfCarrierChoice" class="mf-audience-card" onclick="chooseAudience('carrier')"><strong>🚛 I’m a Carrier</strong><span>Find loads, track expenses and manage trips.</span><em>Join as Carrier →</em></button><button type="button" id="mfShipperChoice" class="mf-audience-card" onclick="chooseAudience('shipper')"><strong>📦 I’m a Shipper</strong><span>Post a load and connect with carriers.</span><em>Join as Shipper →</em></button></div></section>
-  <section id="auth" class="auth-panel" aria-labelledby="authTitle">
+  <section id="auth" class="auth-panel mf-auth-collapsed" aria-labelledby="authTitle">
     <div class="auth-switch" role="tablist" aria-label="Account access">
       <button id="signinTab" type="button" role="tab" aria-selected="true" class="is-selected" onclick="setAuthMode('signin')">Sign in</button>
       <button id="signupTab" type="button" role="tab" aria-selected="false" onclick="setAuthMode('signup')">Create account</button>
     </div>
     <h1 id="authTitle">Welcome back</h1>
     <p id="authHelp">Access your loads, review trip costs and plan your next haul.</p>
-    <p id="mfAudienceHint" class="muted" aria-live="polite">Choose Carrier or Shipper above to personalize your account.</p>
+    <p id="mfAudienceHint" class="muted" aria-live="polite" hidden></p>
     <form id="authForm" novalidate>
       <label for="email">Email address</label>
       <input id="email" type="email" placeholder="driver@example.com" autocomplete="email" required>
@@ -243,7 +256,7 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
     <h2 style="font-size:21px;margin:0 0 8px">Every load. Every dollar. Under control.</h2>
     <p style="color:#c4dbe5;line-height:1.55;margin:0 0 12px">Calculate real profit, manage loads, track expenses and stay on top of payments.</p>
     <div style="display:grid;gap:9px;margin-bottom:14px"><div>✓ Know your real profit</div><div>✓ Manage every load</div><div>✓ Track expenses &amp; payments</div></div>
-    <button type="button" class="auth-submit" style="width:100%" onclick="setAuthMode('signup');showAuth()">Create Free Account</button>
+    <button type="button" class="auth-submit" style="width:100%" onclick="chooseAudience('carrier')">Create Free Account</button>
   </section>
   <details class="public-plans"><summary class="plan-toggle">View plans &amp; pricing <span>+</span></summary><div class="plan-free-note"><strong>Start free. Upgrade when ready.</strong><br>Free includes load tracking, expenses, trip profit calculations, invoices and reports. Pro adds Find Loads, marketplace tools and equipment matching.</div><div class="plan-grid"><article class="plan-card"><span class="pill">Available now</span><h3>Free</h3><div class="plan-price">$0 <small>CAD</small></div><p>Essential tools to plan your next haul.</p><ul><li>Trip profit calculator</li><li>Equipment profile</li><li>Track your loads and expenses</li><li>Invoices and reports</li></ul><button type="button" onclick="setAuthMode('signup');showAuth()">Create free account</button></article><article class="plan-card pro"><span class="pill">Pro · standard monthly</span><h3>MileForge Pro</h3><div class="plan-price">$29.99 <small>CAD / month</small></div><p>Keep your hauling business organized.</p><ul><li>Everything in Free</li><li>Find Loads and marketplace access</li><li>Post loads and manage inquiries</li><li>Equipment matching</li><li>Advanced profit analytics</li></ul><button type="button" class="secondary" disabled>Select Pro</button><p class="work-pending">Pro is $29.99 CAD per month for new subscribers, billed monthly through secure Stripe checkout when available. Manage or cancel future renewals in billing. Complimentary Pro access remains free.</p></article></div><p class="work-note">Marketplace listings are included with Pro. Bookings and haul payments are arranged directly between members; MileForge does not currently collect booking fees.</p></details><!-- Trusted Partners: hidden until an actual partnership and logo-use permission are confirmed. -->
 <section id="mfTrustedPartners" hidden aria-label="Trusted partners" style="max-width:620px;margin:18px auto 8px;padding:16px 18px;text-align:center;border:1px solid #214b5e;border-radius:14px;background:#0a2534">
@@ -359,7 +372,7 @@ function chooseAudience(audience){
   card.classList.toggle('chosen',role===audience);
   card.setAttribute('aria-pressed',String(role===audience));
  }
- $('mfAudienceHint').textContent=audience==='shipper'?'Shipper account — continue to create your account and post a load.':'Carrier account — continue to create your account and find loads.';
+ $('mfAudienceHint').textContent=audience==='shipper'?'Creating a Shipper account':'Creating a Carrier account';
  setAuthMode('signup');showAuth();
 }
 function togglePasswordVisibility(forceHidden=false){
@@ -378,25 +391,31 @@ function setAuthMode(mode){
  $('signupTab').classList.toggle('is-selected',authMode==='signup');
  $('signinTab').setAttribute('aria-selected',String(authMode==='signin'));
  $('signupTab').setAttribute('aria-selected',String(authMode==='signup'));
- $('authTitle').textContent=authMode==='signup'?'Join MileForge':'Welcome back';
- $('authHelp').textContent=authMode==='signup'?'Plan your hauls, estimate trip profitability and manage your loads in one place.':'Access your loads, review trip costs and plan your next haul.';
+ $('authTitle').textContent=authMode==='signup'?(selectedAudience==='shipper'?'Join as Shipper':'Join as Carrier'):'Welcome back';
+ $('authHelp').textContent=authMode==='signup'?(selectedAudience==='shipper'?'Post loads and connect with carriers.':'Find loads, calculate trip profit and manage your trips.'):'Sign in to access your MileForge account.';
  $('submitAuth').textContent=authMode==='signup'?'Create account':'Sign in';
  $('password').setAttribute('autocomplete',authMode==='signup'?'new-password':'current-password');
  $('password').setAttribute('placeholder',authMode==='signup'?'Create a password (6+ characters)':'Enter your password');
+ $('mfAudienceHint').hidden=true;
  $('authMsg').textContent='';
 }
+function openSignIn(){
+ selectedAudience=null;queuedSection=null;setAuthMode('signin');showAuth();
+}
 function showAuth(){
+ $('auth').classList.remove('mf-auth-collapsed');
  $('guestPortal').classList.remove('hidden');
  $('auth').scrollIntoView({behavior:'smooth',block:'center'});
 }
 function teaserAction(section){
  if(user){tab(section);return}
  queuedSection=section;
+ selectedAudience=section==='post'?'shipper':'carrier';setAuthMode('signup');
  $('authMsg').textContent=section==='post'?'Sign in or create an account to post your haul.':'Sign in or create an account to browse available loads.';
  showAuth();
 }
 function tab(name){
- if(!user){queuedSection=name==='overview'?null:name;showAuth();return}
+ if(!user){queuedSection=name==='overview'?null:name;selectedAudience=name==='post'?'shipper':'carrier';setAuthMode('signup');showAuth();return}
  for(const t of ['overview','find','profit','equipment','post','mine'])$(t).classList.toggle('hidden',t!==name);
  document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===name);b.setAttribute('aria-current',b.dataset.tab===name?'page':'false')});
  const home=name==='overview';
