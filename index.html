@@ -203,7 +203,16 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
 </style><link rel="stylesheet" href="/haulwise-tools.css?v=20261023-seven"><link rel="stylesheet" href="/profit-calculator.css?v=20261023"><link rel="stylesheet" href="/mileforge-cinematic-v2.css?v=2"><link rel="stylesheet" href="/mileforge-polish-v3.css?v=1"><link rel="stylesheet" href="/mileforge-growth-v4.css?v=1"><link rel="stylesheet" href="/mileforge-load-invoices-v1.css?v=1"><link rel="stylesheet" href="/mileforge-home-polish-v5.css?v=1">
 <link rel="stylesheet" href="/mileforge-full-rig-v6.css?v=2"><style>.mf-fit{font-size:11px;line-height:1.4;white-space:normal}.mf-fit-blocked{border-color:#a8545c;color:#ffd2d2;background:#472333}.mf-fit-review,.mf-fit-setup{border-color:#ba8943;color:#ffe0a9;background:#473419}.mf-fit-preliminary{border-color:#1e9c9d;color:#b1fff7;background:#073e43}.mf-fit-detail{margin:8px 0!important}.mf-provider-incompatible{opacity:.78}</style><link rel="stylesheet" href="/mileforge-growth-priorities-v7.css?v=1"><link rel="stylesheet" href="/mileforge-myloads-v8.css?v=1">
 <link rel="stylesheet" href="/mileforge-loads-layout-v9.css?v=1">
-<link rel="stylesheet" href="/mileforge-ad-dashboard-v10.css?v=1"></head><body class="guest">
+<link rel="stylesheet" href="/mileforge-ad-dashboard-v10.css?v=1"><style>
+.mf-audience{max-width:620px;margin:16px auto 20px;text-align:center}
+.mf-audience h2{font-size:20px;margin:0 0 14px}
+.mf-audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mf-audience-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:9px;padding:20px;border-radius:16px;background:linear-gradient(145deg,#103246,#071d2e)!important;border:1px solid #326479;color:#eafaff!important;min-height:161px}
+.mf-audience-card strong{font-size:19px}.mf-audience-card span{font-size:13px;font-weight:400;color:#bed5df;line-height:1.4}
+.mf-audience-card em{font-size:13px;font-style:normal;color:#6ceaff;margin-top:auto}
+.mf-audience-card.chosen{border-color:#0ef0e6;box-shadow:0 0 0 2px #0ef0e638}
+@media(max-width:480px){.mf-audience-grid{grid-template-columns:1fr}.mf-audience-card{min-height:115px;padding:15px}}
+</style></head><body class="guest">
 <header><a class="brand-wrap mileforge-header-link" href="/" aria-label="MileForge home"><img class="mileforge-header-logo" src="/icons/mileforge-original-restored-v14.svg" width="144" height="96" alt="MileForge original truck logo"></a><nav><button id="authBtn" class="secondary" onclick="showAuth()">Sign in</button><button id="logoutBtn" class="secondary hidden" onclick="signOut()">Sign out</button></nav></header>
 <main>
 
@@ -212,6 +221,7 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
     <img class="entry-approved-logo" src="/icons/mileforge-original-restored-v14.svg" alt="MileForge original truck logo" width="360" height="240">
     <p>Load management. Clear costs. Smarter decisions.</p><p class="public-calc-link"><a href="/calculator.html" style="color:#5deaf4;font-weight:750;text-decoration:underline;text-underline-offset:4px">Try the free load calculator →</a></p>
   </div>
+  <section class="mf-audience" aria-label="Choose how you use MileForge"><h2>How will you use MileForge?</h2><div class="mf-audience-grid"><button type="button" id="mfCarrierChoice" class="mf-audience-card" onclick="chooseAudience('carrier')"><strong>🚛 I’m a Carrier</strong><span>Find loads, track expenses and manage trips.</span><em>Join as Carrier →</em></button><button type="button" id="mfShipperChoice" class="mf-audience-card" onclick="chooseAudience('shipper')"><strong>📦 I’m a Shipper</strong><span>Post a load and connect with carriers.</span><em>Join as Shipper →</em></button></div></section>
   <section id="auth" class="auth-panel" aria-labelledby="authTitle">
     <div class="auth-switch" role="tablist" aria-label="Account access">
       <button id="signinTab" type="button" role="tab" aria-selected="true" class="is-selected" onclick="setAuthMode('signin')">Sign in</button>
@@ -219,6 +229,7 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
     </div>
     <h1 id="authTitle">Welcome back</h1>
     <p id="authHelp">Access your loads, review trip costs and plan your next haul.</p>
+    <p id="mfAudienceHint" class="muted" aria-live="polite">Choose Carrier or Shipper above to personalize your account.</p>
     <form id="authForm" novalidate>
       <label for="email">Email address</label>
       <input id="email" type="email" placeholder="driver@example.com" autocomplete="email" required>
@@ -338,7 +349,19 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
 const api=supabase.createClient('https://dwtnfrjwnweviunxdams.supabase.co','sb_publishable_pDlu_Truafvo0cPMepadDg_0cQ46bwE');let user=null,loads=[],equip=null;
 const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const cad=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(n);
 
-let authMode='signin',queuedSection=null,loadedUserId=null;
+let authMode='signin',queuedSection=null,loadedUserId=null,selectedAudience=null;
+function chooseAudience(audience){
+ if(audience!=='carrier'&&audience!=='shipper')return;
+ selectedAudience=audience;
+ queuedSection=audience==='shipper'?'post':'find';
+ for(const role of ['carrier','shipper']){
+  const card=$(role==='carrier'?'mfCarrierChoice':'mfShipperChoice');
+  card.classList.toggle('chosen',role===audience);
+  card.setAttribute('aria-pressed',String(role===audience));
+ }
+ $('mfAudienceHint').textContent=audience==='shipper'?'Shipper account — continue to create your account and post a load.':'Carrier account — continue to create your account and find loads.';
+ setAuthMode('signup');showAuth();
+}
 function togglePasswordVisibility(forceHidden=false){
  const field=$('password'),button=$('mfPasswordToggle');
  if(!field||!button)return;
@@ -391,7 +414,7 @@ async function authenticate(){
  $('submitAuth').disabled=true;
  $('authMsg').textContent=signup?'Creating your account…':'Signing in…';
  try{
-   const {data,error}=signup?await api.auth.signUp({email,password,options:{emailRedirectTo:'https://haulwise-murex.vercel.app/'}}):await api.auth.signInWithPassword({email,password});
+   const {data,error}=signup?await api.auth.signUp({email,password,options:{emailRedirectTo:'https://mileforge.ca/',data:{account_type:selectedAudience||'carrier'}}}):await api.auth.signInWithPassword({email,password});
    if(error){$('authMsg').textContent=error.message;return}
    if(signup&&!data.session){$('authMsg').textContent='Check your email to confirm your account, then sign in.';return}
    $('authMsg').textContent='Signed in successfully.';
@@ -411,7 +434,7 @@ async function refreshAuth(){
  if(user){
    $('password').value='';
    if(loadedUserId!==user.id){loadedUserId=user.id;await Promise.all([fetchEquipment(),fetchLoads()])}
-   const destination=queuedSection||'overview';
+   const destination=queuedSection||(user.user_metadata?.account_type==='shipper'?'post':'overview');
    queuedSection=null;
    tab(destination);
  }else{
