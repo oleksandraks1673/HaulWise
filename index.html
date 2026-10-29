@@ -286,8 +286,8 @@ body.guest .entry-brand .entry-approved-logo{display:block;width:min(80vw,360px)
 <section class="mf-home-actions" aria-label="Quick actions" style="margin:12px 0 18px">
  <h2 style="margin:0 0 11px;font-size:18px">Quick actions</h2>
  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
-  <button type="button" onclick="tab('log')" style="text-align:center;padding:14px 8px">+ Add a trip</button>
-  <button type="button" onclick="tab('expenses')" class="secondary" style="text-align:center;padding:14px 8px">+ Record expense</button>
+  <button type="button" onclick="tab('log');showTripEditor()" style="text-align:center;padding:14px 8px">+ Add a trip</button>
+  <button type="button" onclick="tab('expenses');showExpenseEditor()" class="secondary" style="text-align:center;padding:14px 8px">+ Record expense</button>
  </div>
  <details style="margin-top:12px;color:#bad3dc"><summary style="cursor:pointer;padding:9px 4px">More business tools</summary><div style="display:flex;gap:8px;flex-wrap:wrap;padding:12px 0"><button type="button" onclick="tab('reports')" class="secondary">Reports</button><button type="button" onclick="tab('plans')" class="secondary">My Plan</button><button type="button" onclick="tab('post')" class="secondary">Post freight</button><button type="button" onclick="tab('find')" class="secondary">Community loads</button></div></details>
 </section>
